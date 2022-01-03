@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>VIKA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Page wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<span class="logo"> <span>Vancouver Island</span> <a href="index.html">Karting Association</a></span>
+
+						<a href="#menu">Menu</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="index.html#schedule">Schedule</a></li>
+								<li><a href="membership.html">Membership</a></li>
+								<li><a href="rules.html">Rules</a></li>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="index.html#contact">Contact</a></li>
+							</ul>
+							<a class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Main -->
+					<section id="main" class="wrapper alt">
+						<div class="inner">
+
+							<header class="major special">
+								<p>Lorem Ipsum Dolor</p>
+								<h1>Just a Generic Page</h1>
+							</header>
+
+							<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+							<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
+							<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
+							<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+
+						</div>
+					</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner" id="contact">
+			<ul class="contact">
+				<li class="icon solid fa-home">
+					<strong>Address</strong>
+					974 Taine Place, <br>Victoria, V8X 4A4
+				</li>
+				<li class="icon solid fa-phone">
+					<strong>Phone</strong>
+					(250) 514-8888
+				</li>
+				<li class="icon solid fa-envelope">
+					<strong>Email</strong>
+					info@vika.ca
+				</li>
+			</ul>
+			<form>
+				<h4>Get in touch</h4>
+				<div class="fields">
+					<div class="field half">
+						<label for="name">Name</label>
+						<input name="name" id="name" type="text" placeholder="Name">
+					</div>
+					<div class="field half">
+						<label for="email">Email</label>
+						<input name="email" id="email" type="email" placeholder="Email">
+					</div>
+					<div class="field">
+						<label for="message">Message</label>
+						<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+					</div>
+				</div>
+				<ul class="actions">
+					<li><input onclick="sendContactMessage();" id="send-button" type="submit" value="Send Message" /></li>
+				</ul>
+			</form>
+		</div>
+		<div class="copyright">
+			&copy; Vancouver Island Karting Association. All rights reserved.
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+<script>
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+	apiKey: "AIzaSyAIZS44jNWIFGO4Dex6fe3AryepEIVihRc",
+	authDomain: "jsform2mail.firebaseapp.com",
+	projectId: "jsform2mail",
+	storageBucket: "jsform2mail.appspot.com",
+	messagingSenderId: "27543160639",
+	appId: "1:27543160639:web:fbbde6690315ceef29f58a",
+	measurementId: "G-3X4H4KH79V"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+function sendContactMessage() {
+
+	let name = document.getElementById("name").value;
+	let email = document.getElementById("email").value;
+	let message = document.getElementById("message").value;
+
+	message = name + "\n" + email + "\n\n\n" + message;
+
+	db.collection("mail").doc().set({
+		to: ["mitchnursey@gmail.com"],
+		message : {
+			subject : "VIKA, message from " + name,
+			text : message
+		}
+	})
+	.then(() => {
+		console.log("Contact message successfully written!");
+	})
+	.catch((error) => {
+		console.error("Error writing message: ", error);
+	});
+
+	document.getElementById("send-button").value = "Message sent";
+	document.getElementById("send-button").disabled = true;
+}
+
+</script>
+
+</body>
+</html>
