@@ -117,7 +117,7 @@ input, select, textarea {
 
 	body {
 		background-color: #fff;
-		color: #637485;
+		color: black;
 	}
 
 	body, input, select, textarea {
@@ -310,7 +310,7 @@ input, select, textarea {
 	}
 
 	input, select, textarea {
-		color: #637485;
+		color: black;
 	}
 
 	a {
@@ -318,11 +318,11 @@ input, select, textarea {
 	}
 
 	strong, b {
-		color: #637485;
+		color: black;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #637485;
+		color: black;
 	}
 
 	blockquote {
@@ -2225,7 +2225,7 @@ input, select, textarea {
 	}
 
 	label {
-		color: #637485;
+		color: black;
 	}
 
 	input[type="text"],
@@ -2251,13 +2251,13 @@ input, select, textarea {
 	}
 
 		select option {
-			color: #637485;
+			color: black;
 			background: #fff;
 		}
 
 	input[type="checkbox"] + label,
 	input[type="radio"] + label {
-		color: #637485;
+		color: black;
 	}
 
 		input[type="checkbox"] + label:before,
@@ -2752,7 +2752,7 @@ input, select, textarea {
 		}
 
 	table th {
-		color: #637485;
+		color: black;
 	}
 
 	table thead {
@@ -3373,11 +3373,11 @@ input, select, textarea {
 
 		.wrapper.style2 {
 			background-color: #f5f8fa;
-			color: #637485;
+			color: black;
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
-				color: #637485;
+				color: black;
 			}
 
 			.wrapper.style2 a {
@@ -3385,11 +3385,11 @@ input, select, textarea {
 			}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
-				color: #637485;
+				color: black;
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #637485;
+				color: black;
 			}
 
 			.wrapper.style2 blockquote {
@@ -3486,7 +3486,7 @@ input, select, textarea {
 					}
 
 			.wrapper.style2 label {
-				color: #637485;
+				color: black;
 			}
 
 			.wrapper.style2 input[type="text"],
@@ -3512,13 +3512,13 @@ input, select, textarea {
 			}
 
 				.wrapper.style2 select option {
-					color: #637485;
+					color: black;
 					background: #f5f8fa;
 				}
 
 			.wrapper.style2 input[type="checkbox"] + label,
 			.wrapper.style2 input[type="radio"] + label {
-				color: #637485;
+				color: black;
 			}
 
 				.wrapper.style2 input[type="checkbox"] + label:before,
@@ -3585,7 +3585,7 @@ input, select, textarea {
 				}
 
 			.wrapper.style2 table th {
-				color: #637485;
+				color: black;
 			}
 
 			.wrapper.style2 table thead {
@@ -4586,4 +4586,27 @@ input, select, textarea {
 				padding: 2em 1.5em;
 			}
 
+		}
+
+		iframe {
+			height: 1250px !important;
+		}
+
+		#sponsors h2 {
+			color: white;
+		}
+
+		#sponsors {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+			margin-top: 80px !important;
+		}
+
+		#sponsor-images {
+			justify-content: center;
+			box-sizing: border-box;
+			align-items: center;
+			justify-content: space-evenly;
 		}
