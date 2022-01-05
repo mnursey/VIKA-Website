@@ -4604,9 +4604,8 @@ input, select, textarea {
 			margin-top: 80px !important;
 		}
 
-		#sponsor-images {
-			justify-content: center;
-			box-sizing: border-box;
-			align-items: center;
-			justify-content: space-evenly;
+		.sponsor-images {
+			box-sizing: border-box !important;
+			align-items: center !important;
+			justify-content: space-evenly !important;
 		}
