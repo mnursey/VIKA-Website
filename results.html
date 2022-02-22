@@ -546,6 +546,8 @@
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/main.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.js"></script>
+
 		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -603,6 +605,16 @@ function sendContactMessage() {
 	document.getElementById("send-button").value = "Message sent";
 	document.getElementById("send-button").disabled = true;
 }
+
+Papa.parse("https://vika.ca/points_csv.csv", {
+	download: true,
+	step: function(row) {
+		console.log("Row:", row.data);
+	},
+	complete: function() {
+		console.log("All done!");
+	}
+});
 
 </script>
 
