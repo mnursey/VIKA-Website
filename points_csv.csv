@@ -1,8 +1,8 @@
 Driver,Class,Race 1,Race 2,Race 3,Total
 Aaron Smith,TAG Masters,550,485,,1035
-Craig Roberts,TAG Masters,510,450,,960
 Alan Burnell,TAG Masters,600,335,,935
 Mike Chalk,TAG Masters,485,420,,905
+Craig Roberts,TAG Masters,510,350,,860
 Deighton Calverley,TAG Masters,430,370,,800
 Eric Harknett,TAG Masters,450,345,,795
 Todd Martin,TAG Masters,420,360,,780
@@ -19,7 +19,6 @@ John Webster,TAG Masters,0,380,,380
 Brian Lee,TAG Masters,0,375,,375
 Gavin Aitken,TAG Masters,0,365,,365
 Rob Haslam,TAG Masters,0,355,,355
-Erik Harknett,TAG Masters,0,345,,345
 Trevor Bowers,TAG Masters,0,340,,340
 ,,,,,
 ,,,,,
@@ -51,7 +50,7 @@ Carl Wilson,Senior 4 Cycle Open,550,510,,1060
 Hazen Furtado,Senior 4 Cycle Open,510,550,,1060
 Janel Church,Senior 4 Cycle Open,485,450,,935
 Kalem Penner,Senior 4 Cycle Open,600,0,,600
-Chris McLerney,Senior 4 Cycle Open,0,600,,600
+Chris McLnerney,Senior 4 Cycle Open,0,600,,600
 Dylan Church,Senior 4 Cycle Open,0,485,,485
 Bryant Mace,Senior 4 Cycle Open,450,0,,450
 ,,,,,
