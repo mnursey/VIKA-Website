@@ -496,7 +496,7 @@ Papa.parse("https://vika.ca/2022_summer_series_positions.csv", {
 
 				let driver = resultsDataSummer2022[classGroup][i];
 
-				if(driver['total'] > 0) {
+				if(driver['total'] > 0 && driver['hide'] != 'x') {
 					html += `
 				
 					<tr>
