@@ -1,467 +1,933 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
 
-<html>
-	<head>
-		<title>VIKA - Home</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<meta name="description" content="JOIN THE VIKA COMMUNITY. Develop Respectful Driving Skills. Build Lasting Relationships.">
-		<meta name="keywords" content="karting, racing, driving, go kart, kart, victoria, VIMC, VIKA">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    
+    <!-- SEO meta tags -->
+    <title>VIKA | Vancouver Island Karting Association</title>
+    <meta name="description" content="JOIN THE VIKA COMMUNITY. Develop Respectful Driving Skills. Build Lasting Relationships.">
+    <meta name="keywords" content="karting, racing, driving, go kart, kart, victoria, VIMC, VIKA">
+    <meta name="author" content="Vancouver Island Karting Association">
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1GJR3SM3X"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+    <!-- Webmanifest + Favicon / App icons -->
+    <link rel="manifest" href="/manifest.json">
 
-			gtag('config', 'G-M1GJR3SM3X');
-		</script>
+    <!-- 
+    <link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
+    -->
 
-	</head>
-	<body class="is-preload">
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
 
-		<!-- Page wrapper -->
-			<div id="page-wrapper">
+    <!-- Import Google font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"> <span>Vancouver Island</span> <a href="index.html">Karting Association</a></span>
+    <!-- Vendor styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/simplebar/dist/simplebar.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
 
-						<a href="#menu">Menu</a>
-					</header>
+    <!-- Font icons -->
+    <link rel="stylesheet" href="assets/icons/around-icons.min.css">
 
-				<!-- Nav -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="news.html">News</a></li>
-								<li><a href="index.html#schedule">Schedule</a></li>
-								<li><a href="http://track-star.net" target="_blank">2023 Results</a></li>
-								<li><a href="results.html">2022 Results</a></li>
-<li><a href="bc-summer-series-results.html">2022 BC Summer Series Results</a></li>
-								<li><a href="membership.html">Membership</a></li>
-								<li><a href="faq.html">FAQ</a></li>
-								<li><a href="rules.html">Rules</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
-								<li><a href="index.html#contact">Contact</a></li>
-							</ul>
-							<a class="close">Close</a>
-						</div>
-					</nav>
+    <!-- Theme styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<p>Vancouver Island</p>
-							<h1>Karting Association</h1>
-							<ul class="actions special">
-								<li><a href="news.html" class="button large primary scrolly">NEWS</a></li>
-								<li><a href="#schedule" class="button large primary scrolly">SCHEDULE</a></li>
-							</ul>
-						</div>
-					</section>
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+    </style>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2">
-						<div class="inner">
-							<section class="spotlights">
-								<article>
-									<header class="major">
-										<p>JOIN VIKA
-										</p>
-										<h2>Become a member today</h2>
-									</header>
-									<p>Being a member of the Vancouver Island Karting association has enormous benefits! We are a light hearted group who comes together for the love of karting and the love of community. If you are considering joining the sport of karting and are looking for a friendly, competitive, local group that you and your family can enjoy spending multiple weekends a year with, look no further - you've found us!</p>
-									<ul class="actions">
-										<li><a href="membership.html" class="button">More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header class="major">
-										<p>ABOUT VIKA</p>
-										<h2>Learn more about VIKA</h2>
-									</header>
-									<p>
-										Read about the club, its executive and history here.
-									</p>
-									<ul class="actions">
-										<li><a href="about.html" class="button">More</a></li>
-									</ul>
-								</article>
-							</section>
-						</div>
-					</section>
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading')
+          preloader.classList.remove('active')
+          setTimeout(function () {
+            preloader.remove()
+          }, 1500)
+        }
+      })()
+    </script>
+  </head>
 
-				<!-- Two 
-					<section id="two" class="wrapper style1 special">
-						<h2>CLUB EXECUTIVE
-						</h2>
 
-						<div class="inner">
+  <!-- Body -->
+  <body>
 
-							<ul class="features">
-								<li>
-									<span class="icon major solid fa-chart-bar"></span>
-									<h4>GARY SMITH
-									</h4>
-									<p>PRESIDENT</p>
-									<p>
-										Gary has been a member of VIKA since the 1970s and has held many different positions on the executive over the years. Gary has had a very successful racing career in all forms of motorsports and has now come back to where it all began for him -- karting! His focus is to promote karting on the island and give kids of all ages the opportunity to drive a kart.
-									</p>
-									<p>
-										Contact Gary at 250-514-8888
-									</p>
-								</li>
-								<li>
-									<span class="icon major fa-paper-plane"></span>
-									<h4>CRAIG ROBERTS
-									</h4>
-									<p>1ST VICE-PRESIDENT
-									</p>
-									<p>
-										Craig has been passionate about motorsports his entire life. From driver, to crew chief, to corner worker, to flag man in all types of racing. Currently he is involved in high end on-road RC car racing and of course, karting. Craig’s overall goal for this club is to put kart racing back on the map here on Vancouver Island.
-									</p>
-									<p>
-										Contact Craig at 250-896-5630
-									</p>
-								</li>
-								<li>
-									<span class="icon major solid fa-chart-area"></span>
-									<h4>Michael Chalk
-									</h4>
-									<p>
-										2ND VICE-PRESIDENT
-									</p>
-									<p>
-										Michael has come from a background of drag racing mechanics, pit crew for dragster and funny cars around Europe. He is happy to help anyone on and off the track. He found his love for karting in England. He moved to Vancouver island in 2010 and he has been promoting and racing karts with the VIKA ever since.							
-									</p>
-								</li>
-								<li>
-									<span class="icon major solid fa-chart-area"></span>
-									<h4>
-										MICHELLE BEMISTER
 
-									</h4>
-									<p>
-										TREASURER
-									</p>
-									<p>
-										Michelle has been part of a karting family for the past 9 years. She is often at the track supporting her husband and son and more recently volunteering. Michelle brings a friendly attitude, new ideas and her experience as a Human Resource Manager to the club.
-									</p>
-								</li>
-								<li>
-									<span class="icon major fa-file-image"></span>
-									<h4>BRAM HARVEY
-									</h4>
-									<p>SECRETARY
-									</p>
-									<p>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
 
-									</p>
-								</li>
-							</ul>
-						</div>
-					</section>-->
 
-				<!-- Three -->
-					<section id="three" class="wrapper">
-						<div class="inner">
-							<header class="major alt">
-								<p>Rules & Classes</p>
-								<h2>Get up to date for the 2023 season</h2>
-							</header>
-							<section class="posts">
-								<article>
-									<span class="image"><img src="images/D51_0452.jpg" alt=""></span>
-									<div class="content">
-										<p>We offer a variety of classes that offer competitive racing for various ages and motor types. Please read about our rules and classes before jumping into a kart.</p>
-										<ul class="actions">
-											<li><a href="rules.html" class="button">More</a></li>
-										</ul>
-									</div>
-								</article>
-							</section>
-						</div>
-					</section>
+    <!-- Page wrapper -->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
+      <header class="navbar navbar-expand-lg fixed-top" data-bs-theme="light">
+        <div class="container">
 
-				<!-- Four -->
-					<section id="schedule" class="wrapper style2 alt">
-						<div class="inner">
-							<header class="major">
-								<p>SCHEDULE</p>
-								<h2>Confirmed 2023 Events</h2>
-							</header>
-							<section class="timeline">
+          <!-- Navbar brand (Logo) -->
+          <a class="navbar-brand pe-sm-3" href="index.html">
+            Vancouver Island Karting Association
+          </a>
 
-								<section>
-									<header>
-										<p>Saturday, January 14, 2023</p>
-										<h4>GAIN Group Winter Series - Race 1</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. GAIN Group Winter Series - Race 1</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<header>
-										<p>Saturday, February 18, 2023</p>
-										<h4>GAIN Group Winter Series - Race 2</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. GAIN Group Winter Series - Race 2</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<header>
-										<p>Saturday, March 11, 2023</p>
-										<h4>RGAIN Group Winter Series - Race 3</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. GAIN Group Winter Series - Race 3</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<header>
-										<p>Friday, April 14, 2023</p>
-										<h4>Afternoon practice - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/tech_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">No Online Registation Required</a></li>
-										</ul>
-									</div>
-								</section>
+          <!-- Mobile menu toggler (Hamburger) -->
+          <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-								<section>
-									<header>
-										<p>Saturday, April 15, 2023</p>
-										<h4>Race day - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
+          <!-- Navbar collapse (Main navigation) -->
+          <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto" style="--ar-scroll-height: 520px;">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="rules.html">Rules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="membership.html">Membership</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-								<section>
-									<header>
-										<p>Friday, May 5, 2023</p>
-										<h4>Afternoon practice - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/tech_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
 
-								<section>
-									<header>
-										<p>Saturday & Sunday, May 6 & 7, 2023</p>
-										<h4>Race weekend - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
+      <!-- Hero slider -->
+      <section class="position-relative min-vh-100 py-5" data-bs-theme="light">
 
-								<section>
-									<header>
-										<p>Saturday, June 10, 2023</p>
-										<h4>Race day - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
+        <!-- Background image slider -->
+        <div class="swiper swiper-scale-effect position-absolute top-0 start-0 w-100 h-100" data-swiper-options='{
+          "effect": "fade",
+          "speed": 800,
+          "autoplay": {
+            "delay": 7000,
+            "disableOnInteraction": false
+          },
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          }
+        }'>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="swiper-slide-cover bg-position-top-center" style="background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.3)), url(assets/img/VIKA/mainstraight.jpg);"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide-cover bg-position-top-center" style="background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.3)), url(assets/img/VIKA/lo206_3.jpg);"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide-cover bg-position-top-center" style="background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.3)), url(assets/img/VIKA/tag4.jpg);"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination mb-4"></div>
+        </div>
 
-								<section>
-									<header>
-										<p>Friday, July 28, 2023</p>
-										<h4>Afternoon practice - VIMC - Reverse Layout</h4>
-									</header>
-									<span class="image"><img src="images/tech_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC.</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">No Online Registation Required</a></li>
-										</ul>
-									</div>
-								</section>
-								
-								<section>
-									<header>
-										<p>Saturday, July 29, 2023</p>
-										<h4>Race day - VIMC - Reverse Layout</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC - REVERSE LAYOUT</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<header>
-										<p>Friday, September 8, 2023</p>
-										<h4>Full day practice - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/tech_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<header>
-										<p>Saturday, September 9, 2023</p>
-										<h4>Race day - VIMC <br/><br/>BC Regional Sprint Series </h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<header>
-										<p>Sunday, September 10, 2023</p>
-										<h4>Race day - VIMC <br/><br/>BC Regional Sprint Series</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>	
-									<header>
-										<p>Saturday, October 14th, 2023</p>
-										<h4>Race day - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">Complete</a></li>
-											<!--<li><a target="_blank" href="https://www.motorsportreg.com/events/vika-spring-summer-series-race-5-6-westshore-motorsport-park-vancouver-490560" class="button primary">Register</a></li>-->
-										</ul>
-									</div>
-								</section>
+        <!-- Content -->
+        <div class="container position-relative z-2 py-lg-3 py-xl-5 my-5">
+          <div class="row pt-md-3 py-xxl-5 my-5">
+            <div class="col py-5 mb-md-4 mb-lg-5">
+              <h1 class="display-1 text-uppercase mb-4">Vancouver <br>Island<br> Karting<br> Association</h1>
+              <p class="d-block text-body fs-xl pb-2 mb-4 mb-md-5" style="max-width: 500px; color: black !important;">The island's kart racing club.</p>
+              <div class="position-relative d-inline-flex align-items-center">
+                <!--
+                <a class="btn btn-icon btn-lg btn-primary rounded-circle stretched-link" href="https://www.youtube.com/watch?v=SZCxKjgReQ4" data-bs-toggle="video" aria-label="Play video">
+                  <i class="ai-play-filled"></i>
+                </a>
+                <span class="text-body fs-lg fw-semibold ms-3">Watch Video</span></div>
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-								<section>	
-									<header>
-										<p>Saturday, November 25th, 2023</p>
-										<h4>Practice Day - VIMC</h4>
-									</header>
-									<span class="image"><img src="images/vimc_poster.jpg" alt=""></span>
-									<div class="content">
-										<p>Vancouver Island Karting Association @ VIMC. More information coming soon</p>
-										<ul class="actions">
-											<li><a target="_blank" href="" class="button disabled primary">No Online Registation Required</a></li>
-										</ul>
-									</div>
-								</section>
 
-							</section>
-						</div>
-					</section>
+      <!-- Statistics -->
+      <section class="bg-secondary position-relative py-4 py-md-5">
+        <div class="container position-relative z-2">
+          <div class="row row-cols-2 row-cols-md-4">
+            <div class="col">
+              <div class="py-3 my-lg-2 my-xl-3">
+                <div class="text-dark display-4 mb-1">200+</div>
+                <p class="fs-xl mb-0">Drivers in 2023</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="py-3 ps-xl-4 my-lg-2 my-xl-3">
+                <div class="text-dark display-4 mb-1">10+</div>
+                <p class="fs-xl mb-0">Races per year</p>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-md-center">
+              <div class="py-3 my-lg-2 my-xl-3">
+                <div class="text-dark display-4 mb-1">8+</div>
+                <p class="fs-xl mb-0">Classes</p>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-md-end">
+              <div class="py-3 pe-xl-4 my-lg-2 my-xl-3">
+                <div class="text-dark display-4 mb-1">130+</div>
+                <p class="fs-xl mb-0">KPH at VIMC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner" id="contact">
-							<form>
-								<h4>Get in touch</h4>
-								<div class="fields">
-									<div class="field half">
-										<label for="name">Name</label>
-										<input name="name" id="name" type="text" placeholder="Name">
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input name="email" id="email" type="email" placeholder="Email">
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input onclick="sendContactMessage();" id="send-button" type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</div>
-						<div class="inner" id="sponsors" >
-							<h2>2023 Sponsors</h2>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform sponsor-images">
-									<div class="col-10"><span class="image fit"><a href="https://gain-vi.ca/" target="_blank"><img src="images/GAIN_LOGO.png" alt=""></a></span></div>
-								</div>
-							</div>
-						</div>
 
-						<div class="copyright">
-							&copy; Vancouver Island Karting Association. All rights reserved.
-							<br>
-							Site created by <a style="color: #bbb; text-decoration: none;" target="_blank" href="https://mnursey.github.io/">Mitchell Nursey</a>
-						</div>
+      <!-- Target audience -->
+      <section class="container pt-5 mt-xl-3 mt-xxl-5">
+        <div class="row pt-1 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-2">
+          <div class="col-lg-4">
+            <h2 class="h1 pb-1 pb-sm-2 mb-4">About VIKA</h2>
+          </div>
+          <div class="col-lg-8 col-xl-7 offset-xl-1">
+            <div class="ps-lg-4 ps-xl-0">
+              <div data-simplebar>
+                <ul class="nav nav-tabs flex-nowrap mb-2" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4 active" href="#designers" data-bs-toggle="tab" role="tab">Our Mission</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4" href="#developers" data-bs-toggle="tab" role="tab">Executive</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content py-2 pb-md-0 pt-sm-3 pt-lg-4 mb-4 mb-md-5">
+                <div class="tab-pane fade show active" id="designers" role="tabpanel">
+                  <p class="fs-xl mb-4">
+                    Vancouver Island Kart Association mission statement is to build and maintain a safe and respectful environment where everyone can enjoy the sport of Kart Racing. As members of VIKA we celebrate our history, continue to build towards our future while supporting the next generation of karters. Our club’s key focuses will always be to promote: Safety, Sportsmanship and Fun for all in our Karting community.
+                  </p>
+                  <p class="fs-xl mb-4">
+                    VIKA is “Keeping it on the Track”
+                  </p>
+                </div>
+                <div class="tab-pane fade" id="developers" role="tabpanel">
+                  <ul class="fs-xl mb-0">
+                    <li class="mb-1">President - Gary Smith</li>
+                    <li class="mb-1">1st Vice President - Dave Lundy</li>
+                    <li class="mb-1">2nd Vice President - Ron French</li>
+                    <li class="mb-1">Treasurer - Sabrina Smith</li>
+                    <li class="mb-1">Secretary - Lora Lonesberry</li>
+                    <li class="mb-1">Race Director - Steve Peckford</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-lg btn-primary w-100 w-sm-auto" href="membership.html" data-scroll data-scroll-offset="120">
+                Become a member
+                <i class="ai-arrow-right ms-2 me-n2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-					</footer>
 
-			</div>
+      <!-- Sponsors -->
+      <!-- 
+      <section class="bg-secondary pb-md-2 pt-lg-2 pb-lg-4 py-xl-4 py-xxl-5">
+        <div class="container py-5">
+          <h2 class="h1 text-center pb-sm-2 py-md-3 mt-sm-2 mb-lg-4">Sponsored by</h2>
+          <div class="mb-4 mb-lg-5 pb-3 px-3" data-simplebar>
+            <div class="row row-cols-lg-4 flex-nowrap flex-lg-wrap gy-lg-5 mx-n3">
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/envato-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/envato-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Faucibus amet cursus accumsan eleifend tempus diam id duis. Mi velit nulla purus commodo non.</p>
+              </div>
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/angular-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/angular-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Nulla consequat tincidunt ut aliquet quam dignissim. Sagittis, enim libero ultrices eleifend congue.</p>
+              </div>
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/pingdom-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/pingdom-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Ornare leo sed gravida quam volutpat vulputate massa aliquam. Sem lacus, quam tellus duis sit pellentesque.</p>
+              </div>
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/woocommerce-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/woocommerce-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Imperdiet nunc, mauris, sed at egestas. Massa laoreet facilisis turpis adipiscing semper venenatis ipsum.</p>
+              </div>
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/magento-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/magento-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Purus eu faucibus at vel, aliquam. Faucibus nibh odio sed elementum blandit ut sociis et.</p>
+              </div>
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/bootstrap-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/bootstrap-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Adipiscing ultrices risus maecenas libero donec nam. In sollicitudin nulla sagittis, neque sit ullamcorper.</p>
+              </div>
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/laravel-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/laravel-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Pharetra morbi id nibh ut at risus tortor consequat. Dictum urna vulputate quis ut facilisis turpis purus commodo.</p>
+              </div>
+              <div class="col" style="min-width: 225px;">
+                <img class="d-block d-dark-mode-none mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/react-dark.svg" alt="Logo">
+                <img class="d-none d-dark-mode-block mb-2 mb-lg-2" src="assets/img/landing/conference/sponsors/react-light.svg" alt="Logo">
+                <p class="text-body-secondary mb-2">Suspendisse luctus maecenas tristique urna turpis aenean est. Porttitor porta nec tincidunt ut aliquet quam.</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mb-2 mb-sm-3">
+            <a class="btn btn-lg btn-primary" href="#">Become sponsor</a>
+          </div>
+        </div>
+      </section>
+      -->
 
-		<!-- Scripts -->
+      <!-- Schedule -->
+      <section class="container py-5 mb-lg-2 mt-lg-3 my-xl-4 my-xxl-5">
+        <div class="d-md-flex align-items-center justify-content-between pt-2 pt-sm-3 pb-3 mt-md-3 mb-3 mb-lg-4">
+          <div class="d-flex align-items-center mb-4 mb-md-0">
+            <h2 class="h1 mb-0">2024 Schedule</h2>
+            <div class="text-warning flex-shrink-0 ps-sm-1 ms-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0L12.6798 4.12733C13.2879 7.81883 16.1812 10.7121 19.8727 11.3202L24 12L19.8727 12.6798C16.1812 13.2879 13.2879 16.1812 12.6798 19.8727L12 24L11.3202 19.8727C10.7121 16.1812 7.81882 13.2879 4.12733 12.6798L0 12L4.12733 11.3202C7.81883 10.7121 10.7121 7.81882 11.3202 4.12733L12 0Z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <p>
+          Practice dates will be released within January 2024.
+        </p>
+        <div class="tab-content border-top border-bottom mb-3 mb-sm-4 mb-lg-5">
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/main.js"></script>
+          <!-- Day 1 tab -->
+          <div class="tab-pane fade show active" id="dayOne" role="tabpanel">
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, January 20th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Winter Series - Race 1</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Winter Series - Race 1
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, February 10th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Winter Series - Race 2</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Winter Series - Race 2
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, March 9th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Winter Series - Race 3</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Winter Series - Race 3
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, April 6th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 1</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 1
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, May 4th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 2</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 2
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Sunday, May 5th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 3</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 3
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, June 8th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 4</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 4
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, July 27th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 5</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 5
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, September 6th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 6</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 7
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Sunday, September 8th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 7</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 7
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row py-3 my-2 my-md-3">
+              <div class="col-md-3">
+                <div class="h6 mb-2 mb-md-0">Saturday, October 19th, 2024</div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="h4 mb-0">GAIN Group Summer Series - Race 8</h3>
+                <p class="pt-2 pt-md-3 mb-md-0">
+                  Vancouver Island Karting Association @ VIMC. GAIN Group Summer Series - Race 8
+                </p>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <div class="d-inline-flex">
+                  <a class="btn btn-primary" href="#" target="_blank">Registration coming soon</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-						<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      <!-- Gallery -->
+      <section class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
+        <div class="py-2 py-sm-3 py-md-4 my-md-2 my-xxl-3">
+          <h2 class="h1 text-center pt-xxl-1">Photo Gallery</h2>
+          <p class="fs-lg text-center pb-3 mb-lg-4">See how previous races unfolded</p>
+          <div class="gallery row g-3 g-md-4" data-video="true">
+            <div class="col-sm-6">
+              <div class="row g-3 g-md-4">
+                <div class="col-6">
 
-			<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+                  <!-- Item -->
+                  <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/lo206_3.jpg">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0">
+                      <i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-4">
+                      <img class="zoom-effect-img" src="assets/img/VIKA/lo206_3.jpg" alt="Lo206 racing">
+                    </div>
+                  </a>
+
+                </div>
+                <div class="col-6">
+
+                  <!-- Item -->
+                  <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/drivers.jpg">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0"><i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-4"><img class="zoom-effect-img" src="assets/img/VIKA/drivers.jpg" alt="Cool Helmet"></div>
+                  </a>
+
+                </div>
+                <div class="col-12">
+
+                  <!-- Item -->
+                  <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/mainstraight.jpg">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0"><i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-4"><img class="zoom-effect-img" src="assets/img/VIKA/mainstraight.jpg" alt="drivers"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="row g-3 g-md-4">
+                <div class="col-6 order-sm-2">
+                  
+                  <!-- Item -->
+                  <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/tag8.jpg">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0"><i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-4"><img class="zoom-effect-img" src="assets/img/VIKA/tag8.jpg" alt="tag karts"></div>
+                  </a>
+
+                </div>
+                <div class="col-6 order-sm-3">
+
+                  <!-- Item -->
+                  <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/helmet.jpg">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0"><i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-4"><img class="zoom-effect-img" src="assets/img/VIKA/helmet.jpg" alt="kids"></div>
+                  </a>
+
+                </div>
+                <div class="col-12 order-sm-1">
+
+                  <!-- Item -->
+                  <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/pregrid.jpg">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0"><i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-4"><img class="zoom-effect-img" src="assets/img/VIKA/pregrid.jpg" alt="Tag Senior"></div>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
+        <div class="row py-2 py-sm-4 py-md-5 mt-lg-2">
+          <div class="col-md-12 col-lg-12">
+            <div class="ps-md-3 ps-lg-4 ps-xl-5">
+              <h2 class="h1 pb-sm-1 pb-md-3">Common Questions &amp; Answers</h2>
+
+              <!-- Accordion -->
+              <div class="accordion" id="faq">
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                      How can I get started in karting?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse show" id="faq1" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        Getting into karting can have many meanings - one may wish to be a driver, where another would love to be a corner marshall or flagger, and someone else may wish to be part of a pit crew. Our club has a variety of members that all have a role in the karting community. Don't ever feel shy to ask a question - we all know that we were all beginners once.
+                      </p>
+                      <p>
+                        Coming out to one of our track days would be a great place to learn about karting - these days are packed with excitement!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                      Who can kart at VIKA?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq2" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        Events hosted by VIKA are open to the public for spectating and are open to VIKA club members for participation. We have a wide range of members in all shapes and sizes, male and female, children and seniors. If you are considering coming out to spectate, volunteer, or participate in an event, know that we would love for you to join us at one of our upcoming track days!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                      Where are your track day events located?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq3" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        VIKA is pleased to announce that the Vancouver Island Motorsport Circuit will be hosting track days for our club members! VIMC is a brand new, state of the art facility and has a dynamic and challenging track that will test any driver.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                      Is karting expensive?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq4" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        It doesn't have to be, but it sure can be! Like many sports, there are different levels of karting such as the local level, provincial level, nationals, and even large international events. Many karters start out with used equipment to see if it is something they want to invest their time and energy into. These karters sometimes choose to upgrade to a new kart, but many stick to what they have or get new pre-loved equipment. We have a varied group in terms of what we are willing to spend, but one thing is certain, that spending more doesn't always mean you'll have more fun! 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                      Is karting a good family sport?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq5" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        It sure is! Many of our karters have been racing for decades and we have one very special family that had three generations of racers racing on the same day! Karting is a family sport and there is a role for everyone at the track. Think about it: someone needs to drive, someone needs to be the pit crew, and someone needs to be the cheering crowd. If you are looking for a family sport, you have found the right one; and if you're looking for a family, then you've found that too!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                      Are the kart club members friendly?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq6" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        Absolutely! The Vancouver Island Karting Association is well-known for having a friendly, knowledgable, and supportive community! Many of our members have been involved in karting for many years, have tons of knowledge, and are willing to answer any questions you may have about getting involved today. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                      Who can I speak with to get more information about getting into karting?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq7" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        Feel free to contact us, there is a contact forum available on our website! We would love to hear from you and answer any questions you may have about getting into karting.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                      What are the benefits of having a club membership, and do I need to race if I am a member?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq8" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        The biggest club benefit is that you're able to drive in club events if you have a club membership! You are invited to club meetings, can vote in club elections, you can view club minutes and notices online.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                      Is karting a good spectator sport?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq9" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        Karting is a very exciting spectator sport! You may even notice that some of our weekend go-getters have been cheering racers on for years! Once you have seen a few events, you'll learn some driver names and be as invested in the action as if you were on a pit crew. Perhaps you may consider taking an even closer view of the track and consider being a corner marshall...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button fs-6 py-3 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                      What is the difference between the Capital City Kart Club and the Vancouver Island Karting Association?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="faq10" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">
+                      <p>
+                        The Capital City Kart Club and the Vancouver Island Karting Association are one and the same. In 1970, the CCKC was formed and now operates as the Vancouver Island Karting Association. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact form -->
+      <section class="bg-primary position-relative py-5" data-bs-theme="light" id="contact">
+        <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-5"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-15" style="background-image: url(assets/img/landing/conference/noise.png); mix-blend-mode: soft-light;"></div>
+        <div class="container position-relative z-2 pt-sm-2 pb-3 py-md-4 py-lg-5">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-lg-5 col-xxl-4 pb-2 pb-md-0 mb-4 mb-md-0">
+              <div class="text-warning pb-3 mb-1 mb-md-2 mb-lg-3">
+                <svg class="d-block" width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 0L14.659 4.14233C15.4424 9.06596 20.2555 12.9977 26.4868 13.8042L28 14L26.4868 14.1958C20.2555 15.0023 15.4424 18.934 14.659 23.8577L14 28L13.341 23.8577C12.5576 18.934 7.74447 15.0023 1.51323 14.1958L0 14L1.51323 13.8042C7.74447 12.9977 12.5576 9.06596 13.341 4.14234L14 0Z"></path>
+                </svg>
+              </div>
+              <h2 class="display-5 text-light mb-4 mb-md-5"> We would love to hear from you!</h2>
+            </div>
+            <div class="col-md-6 offset-lg-1 offset-xxl-2">
+              <div class="card bg-white border-0 p-1 p-sm-2 p-lg-3">
+                <form class="card-body needs-validation p-4" novalidate>
+                  <div class="mb-4">
+                    <label class="form-label fs-base" for="email">Email</label>
+                    <input class="form-control form-control-lg" type="email" placeholder="Email address" required id="email">
+                    <div class="invalid-feedback">Please provide a valid email address!</div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label fs-base" for="name">Name</label>
+                    <input class="form-control form-control-lg" type="text" placeholder="Your name" required id="name">
+                    <div class="invalid-feedback">Please enter your name!</div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label fs-base" for="message">Message</label>
+                    <textarea class="form-control form-control-lg" rows="5" placeholder="Your message" required id="message"></textarea>
+                    <div class="invalid-feedback">Please enter your message!</div>
+                  </div>
+                  <button class="btn btn-lg btn-warning" type="button" id="send-button" onclick="sendContactMessage();">Send request</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5" data-bs-theme="dark">
+      <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="border-bottom text-center pb-4">
+          <a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="index.html">
+            <span class="text-light opacity-90">Vancouver Island Karting Association</span>
+          </a>
+          <ul class="nav justify-content-center py-1 pb-sm-2">
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="rules.html">Rules</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="membership.html">Membership</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
+          <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0">
+            <a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-3" target="_blank" href="https://www.facebook.com/groups/2809072876088221" aria-label="Facebook">
+              <i class="ai-facebook"></i>
+            </a>
+          </div>
+          <p class="nav fs-sm order-sm-1 text-center mb-0">
+            <span class="text-body-secondary">&copy; All rights reserved Vancouver Island Karting Association.</span>
+          </p>
+          <p class="nav fs-sm order-sm-1 text-center mb-0">
+            <span class="text-body-secondary">Website by</span>
+            <a class="nav-link d-inline fw-normal p-0 ms-1" href="https://mnursey.github.io/" target="_blank" rel="noopener">Mitchell Nursey</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Back to top button -->
+    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
+
+
+    <!-- Vendor scripts: JS libraries and plugins -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+
+    <!-- Bootstrap + Theme scripts -->
+    <script src="assets/js/theme.min.js"></script>
+
+      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 			<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 
 			<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
@@ -513,13 +979,9 @@
 						console.error("Error writing message: ", error);
 					});
 
-					document.getElementById("send-button").value = "Message sent";
+					document.getElementById("send-button").innerHTML = "Message sent";
 					document.getElementById("send-button").disabled = true;
 				}
-
-
-
-			</script>
-
-	</body>
+      </script>
+  </body>
 </html>
