@@ -1,1015 +1,1013 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-  <head>
-    <meta charset="utf-8">
+   <head>
+      <meta charset="utf-8">
+      <!-- Viewport -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+      <!-- SEO meta tags -->
+      <title>VIKA | Vancouver Island Karting Association</title>
+      <meta name="description" content="JOIN THE VIKA COMMUNITY. Develop Respectful Driving Skills. Build Lasting Relationships.">
+      <meta name="keywords" content="karting, racing, driving, go kart, kart, victoria, VIMC, VIKA">
+      <meta name="author" content="Vancouver Island Karting Association">
+      <!-- Webmanifest + Favicon / App icons -->
+      <link rel="manifest" href="/manifest.json">
+      <!-- 
+         <link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
+         <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
+         -->
+      <!-- Theme switcher (color modes) -->
+      <script src="assets/js/theme-switcher.js"></script>
+      <!-- Import Google font (Inter) -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-    
-    <!-- SEO meta tags -->
-    <title>VIKA | Vancouver Island Karting Association</title>
-    <meta name="description" content="JOIN THE VIKA COMMUNITY. Develop Respectful Driving Skills. Build Lasting Relationships.">
-    <meta name="keywords" content="karting, racing, driving, go kart, kart, victoria, VIMC, VIKA">
-    <meta name="author" content="Vancouver Island Karting Association">
+      <!-- Vendor styles -->
+      <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
+      <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+      <link rel="stylesheet" media="screen" href="assets/vendor/simplebar/dist/simplebar.min.css">
+      <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
 
-    <!-- Webmanifest + Favicon / App icons -->
-    <link rel="manifest" href="/manifest.json">
+      <!-- Font icons -->
+      <link rel="stylesheet" href="assets/icons/around-icons.min.css">
+      <!-- Theme styles + Bootstrap -->
+      <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
 
-    <!-- 
-    <link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
-    -->
-        
-    <!-- Theme switcher (color modes) -->
-    <script src="assets/js/theme-switcher.js"></script>
-
-    <!-- Import Google font (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
-
-    <!-- Vendor styles -->
-    <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
-
-    <!-- Font icons -->
-    <link rel="stylesheet" href="assets/icons/around-icons.min.css">
-
-    <!-- Theme styles + Bootstrap -->
-    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-
-    <!-- Page loading styles -->
-    <style>
-      .page-loading {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all .4s .2s ease-in-out;
-        transition: all .4s .2s ease-in-out;
-        background-color: #fff;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 9999;
-      }
-      [data-bs-theme="dark"] .page-loading {
-        background-color: #121519;
-      }
-      .page-loading.active {
-        opacity: 1;
-        visibility: visible;
-      }
-      .page-loading-inner {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        -webkit-transition: opacity .2s ease-in-out;
-        transition: opacity .2s ease-in-out;
-        opacity: 0;
-      }
-      .page-loading.active > .page-loading-inner {
-        opacity: 1;
-      }
-      .page-loading-inner > span {
-        display: block;
-        font-family: "Inter", sans-serif;
-        font-size: 1rem;
-        font-weight: normal;
-        color: #6f788b;
-      }
-      [data-bs-theme="dark"] .page-loading-inner > span {
-        color: #fff;
-        opacity: .6;
-      }
-      .page-spinner {
-        display: inline-block;
-        width: 2.75rem;
-        height: 2.75rem;
-        margin-bottom: .75rem;
-        vertical-align: text-bottom;
-        background-color: #d7dde2; 
-        border-radius: 50%;
-        opacity: 0;
-        -webkit-animation: spinner .75s linear infinite;
-        animation: spinner .75s linear infinite;
-      }
-      [data-bs-theme="dark"] .page-spinner {
-        background-color: rgba(255,255,255,.25);
-      }
-      @-webkit-keyframes spinner {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-      @keyframes spinner {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-    </style>
-
-    <!-- Page loading scripts -->
-    <script>
-      (function () {
-        window.onload = function () {
-          const preloader = document.querySelector('.page-loading')
-          preloader.classList.remove('active')
-          setTimeout(function () {
-            preloader.remove()
-          }, 1500)
-        }
-      })()
-    </script>
-  </head>
-
-
-  <!-- Body -->
-  <body>
-
-
-    <!-- Page loading spinner -->
-    <div class="page-loading active">
-      <div class="page-loading-inner">
-        <div class="page-spinner"></div>
-        <span>Loading...</span>
+      <!-- Page loading styles -->
+      <style>
+         .page-loading {
+         position: fixed;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         -webkit-transition: all .4s .2s ease-in-out;
+         transition: all .4s .2s ease-in-out;
+         background-color: #fff;
+         opacity: 0;
+         visibility: hidden;
+         z-index: 9999;
+         }
+         [data-bs-theme="dark"] .page-loading {
+         background-color: #121519;
+         }
+         .page-loading.active {
+         opacity: 1;
+         visibility: visible;
+         }
+         .page-loading-inner {
+         position: absolute;
+         top: 50%;
+         left: 0;
+         width: 100%;
+         text-align: center;
+         -webkit-transform: translateY(-50%);
+         transform: translateY(-50%);
+         -webkit-transition: opacity .2s ease-in-out;
+         transition: opacity .2s ease-in-out;
+         opacity: 0;
+         }
+         .page-loading.active > .page-loading-inner {
+         opacity: 1;
+         }
+         .page-loading-inner > span {
+         display: block;
+         font-family: "Inter", sans-serif;
+         font-size: 1rem;
+         font-weight: normal;
+         color: #6f788b;
+         }
+         [data-bs-theme="dark"] .page-loading-inner > span {
+         color: #fff;
+         opacity: .6;
+         }
+         .page-spinner {
+         display: inline-block;
+         width: 2.75rem;
+         height: 2.75rem;
+         margin-bottom: .75rem;
+         vertical-align: text-bottom;
+         background-color: #d7dde2; 
+         border-radius: 50%;
+         opacity: 0;
+         -webkit-animation: spinner .75s linear infinite;
+         animation: spinner .75s linear infinite;
+         }
+         [data-bs-theme="dark"] .page-spinner {
+         background-color: rgba(255,255,255,.25);
+         }
+         @-webkit-keyframes spinner {
+         0% {
+         -webkit-transform: scale(0);
+         transform: scale(0);
+         }
+         50% {
+         opacity: 1;
+         -webkit-transform: none;
+         transform: none;
+         }
+         }
+         @keyframes spinner {
+         0% {
+         -webkit-transform: scale(0);
+         transform: scale(0);
+         }
+         50% {
+         opacity: 1;
+         -webkit-transform: none;
+         transform: none;
+         }
+         }
+      </style>
+      <!-- Page loading scripts -->
+      <script>
+         (function () {
+           window.onload = function () {
+             const preloader = document.querySelector('.page-loading')
+             preloader.classList.remove('active')
+             setTimeout(function () {
+               preloader.remove()
+             }, 1500)
+           }
+         })()
+      </script>
+   </head>
+   <!-- Body -->
+   <body>
+      <!-- Page loading spinner -->
+      <div class="page-loading active">
+         <div class="page-loading-inner">
+            <div class="page-spinner"></div>
+            <span>Loading...</span>
+         </div>
       </div>
-    </div>
-
-
-    <!-- Page wrapper -->
-    <main class="page-wrapper">
-
-      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
-      <header class="navbar navbar-expand-lg fixed-top bg-light">
-        <div class="container">
-
-            <!-- Navbar brand (Logo) -->
-            <a class="navbar-brand pe-sm-3" href="index.html">
-              Vancouver Island Karting Association
-            </a>
-  
-            <!-- Mobile menu toggler (Hamburger) -->
-            <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-  
-            <!-- Navbar collapse (Main navigation) -->
-            <nav class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav navbar-nav-scroll ms-auto" style="--ar-scroll-height: 520px;">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="rules.html">Rules</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="membership.html">Membership</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html#contact">Contact</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-      </header>
-
-
-      <!-- Pricing plans -->
-      <section class="container py-5 mt-5 mb-lg-3 mb-xl-4 mb-xxl-5">
-
-        <!-- Page title -->
-        <div class="text-center pb-3 pt-lg-2 pt-xl-4 my-1 my-sm-3 my-lg-4">
-          <h1 class="display-2">Rules</h1>
-          <p class="fs-lg mb-0">2024 Rules will be released shortly</p>
-        </div>
-
-        <!-- Plans -->
-        <div class="row row-cols-1 flex-nowrap pb-4 overflow-auto">
-            <div class="col" style="min-width: 19rem;">
-                <h2>
-                   2023 Summer Series Rules
-                </h2>
-                <p>
-                   <b style="color:red !important">Our rules will follow the 2023 WCKC Rules with the following amendments:</b>
-                </p>
-                <ol>
-                   <li>
-                      Motors that were given the engine claim rules in the 2023 WCKC rules, but did not have an engine claim rule previously will not have the engine claim rule applied.
-                      Motors with an engine claim rule in the 2022 and 2023 WCKC rules will continue to have a engine claim rule.
-                   </li>
-                   <br>
-                   <li>
-                      Motors may use either leaded or non leaded fuel for the 2023 season.
-                   </li>
-                </ol>
-                <a target="_blank" href="https://westcoastkartclub.ca/Rules-WCKC.html" class="button">View WCKC 2023 Rules</a>
-                <a target="_blank" href="https://www.asncanada.ca/karting" class="button">View latest ASN CANADA - Canadian Karting Regulations</a>
-                <p></p>
-                <h3>
-                   VANCOUVER ISLAND KARTING ASSOCIATION 2023 WEIGHTS AND CLASSES
-                </h3>
-                <h3>JUNIOR 4 CYCLE</h3>
-                <div class="table-wrapper">
-                   <table style="width: 100%;">
-                      <tbody>
-                         <tr>
-                            <th>
-                               CLASS
-                            </th>
-                            <th>
-                               Engine
-                            </th>
-                            <th>
-                               Min. Weight
-                            </th>
-                            <th>
-                               Carb / Restrictor
-                            </th>
-                            <th>
-                               Notes
-                            </th>
-                            <th>
-                               Related Documents
-                            </th>
-                         </tr>
-                         <tr>
-                            <td>
-                               Junior 1
-                               <br> 
-                               (Ages 7-11, Cadet Chassis)
-                            </td>
-                            <td>
-                               L0206
-                            </td>
-                            <td>
-                               250
-                            </td>
-                            <td>
-                               Green Part #555740
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                               <a href="https://www.asncanada.ca/karting" target="_blank">Briggs</a>
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                               Junior 2
-                               <br> 
-                               (Ages 12-15)
-                            </td>
-                            <td>
-                               L0206
-                            </td>
-                            <td>
-                               320
-                            </td>
-                            <td>
-                               Stock Slide Part #555590
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                               <a href="https://www.asncanada.ca/karting" target="_blank">Briggs</a>
-                            </td>
-                         </tr>
-                      </tbody>
-                   </table>
-                </div>
-                <br>
-                <h3>Tag Cadet</h3>
-                <div class="table-wrapper">
-                   <table style="width: 100%;">
-                      <tbody>
-                         <tr>
-                            <th>
-                               CLASS
-                            </th>
-                            <th>
-                               Engine
-                            </th>
-                            <th>
-                               Min. Weight
-                            </th>
-                            <th>
-                               Carb / Restrictor
-                            </th>
-                            <th>
-                               Notes
-                            </th>
-                            <th>
-                               Related Documents
-                            </th>
-                         </tr>
-                         <tr>
-                            <td>
-                               Tag Cadet
-                               <br> 
-                               (Ages 7-11, Cadet Chassis)
-                            </td>
-                            <td>
-                               Iame Leopard 100cc	
-                            </td>
-                            <td>
-                               230
-                            </td>
-                            <td>
-                               Tillotson HL334AB 23mm bore / Intake 17mm/Exhaust 25mm, Min Squish 2.4mm
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                               <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                               Tag Cadet
-                               <br> 
-                               (Ages 7-11, Cadet Chassis)
-                            </td>
-                            <td>
-                               Iame Mini Swift	
-                            </td>
-                            <td>
-                               225
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                               <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                               Tag Cadet
-                               <br> 
-                               (Ages 7-11, Cadet Chassis)
-                            </td>
-                            <td>
-                               Mini RoK	
-                            </td>
-                            <td>
-                               225
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                               <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                               Tag Cadet
-                               <br> 
-                               (Ages 7-11, Cadet Chassis)
-                            </td>
-                            <td>
-                               Mini Rotax	
-                            </td>
-                            <td>
-                               265
-                            </td>
-                            <td>
-                               MY20 Inlet restrictor
-                            </td>
-                            <td>
-                               18mm exhaust restrictor, Cadet Gearing 14/78 mini exhaust part #273137
-                            </td>
-                            <td>
-                               <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                               Tag Cadet
-                               <br> 
-                               (Ages 7-11, Cadet Chassis)
-                            </td>
-                            <td>
-                               X125T-MX (green)		
-                            </td>
-                            <td>
-                               245
-                            </td>
-                            <td>
-                               Tillotson 23mm HL334AB Carb / Intake 17mm Part # IM111-17mm
-                            </td>
-                            <td>
-                               Exhaust 22mm Part #12.2624311, Min. Squish 1.8mm, Gearing
-                               11/78 / Approved Airboxes only Version 2022A										
-                            </td>
-                            <td>
-                               <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 XM</a>
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                               Tag Cadet
-                               <br> 
-                               (Ages 7-11, Cadet Chassis)
-                            </td>
-                            <td>
-                               X125T-WC (red)		
-                            </td>
-                            <td>
-                               255
-                            </td>
-                            <td>
-                               Tillotson 23mm HL334A/HL334AB Carb / Intake 17mm Part # IM111-17mm
-                            </td>
-                            <td>
-                               Exhaust 22mm Part #20.1467.06, Min Squish 2.4mm,
-                               Gearing 11/78
-                            </td>
-                            <td>
-                               <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 XM</a>
-                            </td>
-                         </tr>
-                      </tbody>
-                   </table>
-                </div>
-                <br>
-                <h3>Tag Junior</h3>
-                <table style="width: 100%;">
-                   <thead>
-                      <tr>
-                         <th>CLASS</th>
-                         <th>Engine</th>
-                         <th><span style="font-style:inherit;color:black">Min. Weight</span></th>
-                         <th><span style="font-style:inherit;color:black">Carb / Restrictor</span></th>
-                         <th>Notes</th>
-                         <th><span style="font-style:inherit;color:black">Related Documents</span></th>
-                      </tr>
-                   </thead>
-                   <tbody>
-                      <tr>
-                         <td>Tag Junior <br>(Ages 12-15)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">Iame Leopard 125cc</span></td>
-                         <td>330</td>
-                         <td>HL334A/HL334AB</td>
-                         <td>Exhaust 30mm Header Part# A‐125365</td>
-                         <td>
-                            <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Junior <br>(Ages 12-15)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">Iame X30 Jr</span></td>
-                         <td><span style="font-weight:inherit;font-style:inherit">330</span></td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Junior <br>(Ages 12-15)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">PRD Fireball</span></td>
-                         <td>315</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Junior <br>(Ages 12-15)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">RoK Jr.</span></td>
-                         <td>315</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Junior<br>(Ages 12-15)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">Rotax Junior</span></td>
-                         <td>315</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Junior <br>(Ages 12-15)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">X125T (green)</span></td>
-                         <td>330</td>
-                         <td>HW‐44A 24mm, 30mm</td>
-                         <td>30mm Exhaust Header Part# X125‐220162 / Approved Airboxes only Version 2022</td>
-                         <td>
-                            <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 MX</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Junior <br>(Ages 12-15)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">X125 WC (red)</span></td>
-                         <td>330</td>
-                         <td>Tillotson HW32A</td>
-                         <td>Exhaust Header Part# 20.14230.06</td>
-                         <td>
-                            <a href="http://westcoastkartclub.ca/uploads/X125T-WC_Homologation_1_2023%20opt.pdf" target="_blank">X125 WC</a>
-                         </td>
-                      </tr>
-                   </tbody>
-                </table>
-                <br>
-                <h3>Senior 4 Cycle</h3>
-                <table style="width: 100%;">
-                   <thead>
-                      <tr>
-                         <th>CLASS</th>
-                         <th>Engine</th>
-                         <th><span style="font-style:inherit;color:black">Min. Weight</span></th>
-                         <th><span style="font-style:inherit;color:black">Carb / Restrictor</span></th>
-                         <th>Notes</th>
-                         <th><span style="font-style:inherit;color:black">Related Documents</span></th>
-                      </tr>
-                   </thead>
-                   <tbody>
-                      <tr>
-                         <td>Senior Briggs<br>(Ages 15+)</td>
-                         <td>Briggs L0206</td>
-                         <td>360</td>
-                         <td>Stock Black Slide #555590</td>
-                         <td></td>
-                         <td>
-                            <a href="https://www.asncanada.ca/karting" target="_blank">BRIGGS</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Senior 4 Cycle Open<br> (Ages 15+)</td>
-                         <td>Stock Honda<br>4X 160/200</td>
-                         <td>365</td>
-                         <td>No Restrictor</td>
-                         <td></td>
-                         <td></td>
-                      </tr>
-                      <tr>
-                         <td>Senior 4 Cycle Open<br> (Ages 15+)</td>
-                         <td>World Formula</td>
-                         <td>380 </td>
-                         <td></td>
-                         <td></td>
-                         <td></td>
-                      </tr>
-                      <tr>
-                         <td>Senior 4 Cycle Open<br> (Ages 15+)</td>
-                         <td><span style="font-weight:inherit;font-style:inherit">Open Honda</span><br><span style="font-weight:inherit;font-style:inherit">Honda GX200</span></td>
-                         <td>380 </td>
-                         <td></td>
-                         <td></td>
-                         <td></td>
-                      </tr>
-                   </tbody>
-                </table>
-                <br>
-                <h3>Tag Senior</h3>
-                <table style="width: 100%;">
-                   <thead>
-                      <tr>
-                         <th>CLASS</th>
-                         <th>Engine</th>
-                         <th><span style="font-style:inherit;color:black">Min. Weight</span></th>
-                         <th><span style="font-style:inherit;color:black">Carb / Restrictor</span></th>
-                         <th>Notes</th>
-                         <th><span style="font-style:inherit;color:black">Related Documents</span></th>
-                      </tr>
-                   </thead>
-                   <tbody>
-                      <tr>
-                         <td>Tag Senior<br>(Ages 16+)</td>
-                         <td>Iame Leopard</td>
-                         <td>355</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Senior<br>(Ages 16+)</td>
-                         <td><span>Iame X30</span></td>
-                         <td>365</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Senior<br>(Ages 16+)</td>
-                         <td><span>ROK GP</span></td>
-                         <td>375</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Senior<br>(Ages 16+)</td>
-                         <td>Rotax</td>
-                         <td>360</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Senior<br>(Ages 16+)</td>
-                         <td>X125T (green)</td>
-                         <td>370</td>
-                         <td>Tillotson HW‐44A 24mm bore Only</td>
-                         <td></td>
-                         <td>
-                            <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 MX</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Senior<br>(Ages 16+)</td>
-                         <td><span>X125 WC (red)</span></td>
-                         <td>370</td>
-                         <td>Tillotson HW32A</td>
-                         <td>Approved Airboxes only Version 2022A</td>
-                         <td>
-                            <a href="http://westcoastkartclub.ca/uploads/X125T-WC_Homologation_1_2023%20opt.pdf" target="_blank">X125 WC</a>
-                         </td>
-                      </tr>
-                   </tbody>
-                </table>
-                <br>
-                <h3>Tag Masters</h3>
-                <table style="width: 100%;">
-                   <thead>
-                      <tr>
-                         <th>CLASS</th>
-                         <th>Engine</th>
-                         <th>Min. Weight</th>
-                         <th>Carb / Restrictor</th>
-                         <th>Notes</th>
-                         <th>Related Documents</th>
-                      </tr>
-                   </thead>
-                   <tbody>
-                      <tr>
-                         <td>Tag Masters<br>(Ages 32+)</td>
-                         <td>Iame Leopard</td>
-                         <td>380</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Masters<br>(Ages 32+)</td>
-                         <td>Iame X30</td>
-                         <td>385</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Masters<br>(Ages 32+)</td>
-                         <td>ROK GP</td>
-                         <td>400</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Masters<br>(Ages 32+)</td>
-                         <td>Rotax</td>
-                         <td>385</td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                            <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Masters<br>(Ages 32+)</td>
-                         <td>X125T (green)</td>
-                         <td>395</td>
-                         <td>Tillotson HW‐44A 24mm bore</td>
-                         <td>Approved Airboxes only Version 2022A</td>
-                         <td>
-                            <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 MX</a>
-                         </td>
-                      </tr>
-                      <tr>
-                         <td>Tag Masters<br>(Ages 32+)</td>
-                         <td>X125 WC (red)</td>
-                         <td>395</td>
-                         <td>Tillotson HW32A</td>
-                         <td>Approved Airboxes only Version 2022A</td>
-                         <td>
-                            <a href="http://westcoastkartclub.ca/uploads/X125T-WC_Homologation_1_2023%20opt.pdf" target="_blank">X125 WC</a>
-                         </td>
-                      </tr>
-                   </tbody>
-                </table>
-                <br><br>
-                <h1 class="c13"><span class="c18">2023 VIKA Supplementary Competition Rules </span></h1>
-                <a target="_blank" href="/assets/documents/2023-VIKA-Kid-Kart-Class-Supplemental-Rules-1.pdf" class="button">Kid Kart Class Supplemental Rules</a>
-                <p class="c0 c17 subtitle"><span class="c2"></span></p>
-                <p class="c0 subtitle"><span class="c2">The information contained within this rule package is intended as a supplement to the ASN CANADA FIA GENERAL COMPETITION REGULATIONS and may be incomplete and is subject to change by the club executive without further notice. Where there is a conflict between the rules stated herein and ASN rules, these rules shall take precedence. To completely understand the scope of the entire club rules contract, it is recommended that all members acquire and familiarize themselves with the rules as set out in the ASN competition regulations and technical manual. For interpretation or clarification of these rules contact the Race Director.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h2 class="c4"><span class="c24">1.0 INTRODUCTION </span></h2>
-                <p class="c3 subtitle"><span class="c2">Vancouver Island Kart Association, further referred to as VIKA, is a private membership club incorporated as a not for profit society with the mandate to promote the sport of karting. </span></p>
-                <p class="c0 subtitle"><span class="c2">VIKA Rule book consist of 2 parts:</span></p>
-                <p class="c0 c26 subtitle"><span class="c6">Part 1</span><span class="c2">, General club rule set including rules and regulations for practicing at VIKA on non-racing dates.</span></p>
-                <p class="c0 c26 subtitle"><span class="c6">Part 2</span><span class="c2">, Competition rule set including rules and regulations for club racing at VIKA.</span></p>
-                <p class="c0 subtitle"><span class="c2">Both rule sets work in conjunction with each other. Please read them carefully and familiarize yourself to avoid confusion and disappointment while practicing and racing at VIKA.</span></p>
-                <h2 class="c4"><span class="c10">2.0 GENERAL </span></h2>
-                <h3 class="c4"><span class="c9">&nbsp;2.1 RELEASE OF LIABILITY </span></h3>
-                <p class="c3 subtitle"><span class="c2">All persons who enter the premises must sign a “RELEASE OF LIABILITY” form before being allowed on the premises. </span></p>
-                <p class="c0 subtitle"><span class="c2">All visitors, drivers, officials, mechanics and parents of juniors are required to sign the “RELEASE OF LIABILITY” form. </span></p>
-                <p class="c0 subtitle"><span class="c2">At race weekends all spectators entering the facility must obtain a wristband and sign the general waiver. Spectators must not enter restricted areas of the facility without having obtained a wrist band from registration.</span></p>
-                <p class="c0 subtitle"><span class="c2">Restricted areas include, but are not restricted to the: racing surface, run off areas, grid area, scale area, tech area, timing, scoring, flagging stands and any other area used to run the event. Generally anywhere other than the parking lot and the grandstands at the entrance to the property. </span></p>
-                <p class="c0 subtitle"><span class="c2">All minors must submit a “RELEASE OF LIABILITY” and “HOLD HARMLESS AGREEMENT” at any time an adult would have to sign a “RELEASE OF LIABILITY”. </span></p>
-                <p class="c0 subtitle"><span class="c2">All competitors, mechanics, etc. must sign the “RELEASE OF LIABILITY” and “HOLD HARMLESS AGREEMENT”. </span></p>
-                <p class="c0 subtitle"><span class="c2">Upon payment of entry fees, the Registrar will issue the appropriate armbands and Tech Sheets.</span></p>
-                <h3 class="c4"><span class="c9">2.2 MEMBERSHIP </span></h3>
-                <p class="c3 subtitle"><span class="c2">A membership is required for drivers to participate within the club's races.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">2.3 TRACK OPERATIONS </span></h3>
-                <p class="c3 subtitle"><span class="c2">Karts, ATVs, scooters, bikes, skateboards, and other non-medical mobility devices are not to be operated in the pit area or the track while the track is hot. </span></p>
-                <p class="c0 subtitle"><span class="c2">Karts being pushed on kart stands to the hot pit area are not permitted to be running. </span></p>
-                <p class="c0 subtitle"><span class="c2">Karts are not to be operated under their own power in the pit area at any time. Must be in control and outside of your kart. </span></p>
-                <h3 class="c4"><span class="c9">2.3 STORAGE AT FACILITY </span></h3>
-                <p class="c3 subtitle"><span class="c2">Storage information is not relevant at this time.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">2.4 DRIVERS, MECHANICS, AND OBSERVERS </span></h3>
-                <p class="c3 subtitle"><span class="c2">All drivers participating in club racing events must be VIKA members. Special circumstances may be accommodated by the VIKA Executive. A one day license is available. A fee will be charged for a one-day license. No license is required for open practice days. Drivers are responsible for the conduct of their crew and spectators.</span></p>
-                <p class="c0 subtitle"><span class="c2">Licensed drivers to observe ASN licensing rules for a practice event (i.e.: one license category higher).</span></p>
-                <p class="c0 subtitle"><span>Driver’s safety equipment to be as per ASN Canada FIA Sporting Regulations</span><span class="c22">&nbsp;and or approved safety apparel determined during pre-race tech</span><span>. Driver’s suits are mandatory. Rib protectors</span><span class="c22">&nbsp;and neck braces are highly recommended</span><span class="c2">. </span></p>
-                <p class="c0 subtitle"><span class="c2">Full face helmets with visors are mandatory. SNELL 2010 is the minimum recommended standard.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <p class="c14 subtitle"><span class="c2">Helmets: Full coverage (full face), with the face shield installed, and designed for competitive motorsports are mandatory. </span></p>
-                <p class="c14 subtitle"><span class="c2">Helmets must meet the following rating: </span></p>
-                <p class="c14 subtitle"><span class="c2">10.6.5. Snell Foundation:</span></p>
-                <p class="c14 subtitle"><span>&nbsp;</span><span class="c2">∙ M 2015 12/31/2025 ∙ SA2015 12/31/2025 ∙ CMS 2016 12/31/2026 ∙ CMR2017 12/31/2026 ∙ K 2015 12/31/2026 ∙ M 2020 12/31/2030 ∙ SA2020 12/31/2030 </span></p>
-                <p class="c14 subtitle"><span class="c2">All Snell 2005, 2007 &amp; 2010 Helmets are not recommended.</span></p>
-                <p class="c14 subtitle"><span class="c2">10.6.6. SFI Specification:</span></p>
-                <p class="c14 subtitle"><span class="c2">&nbsp;∙ 24.1/2015 (youth helmet) 12/21/2025 ∙ 31.1/2015 12/31/2025 ∙ 41.1/2015 12/21/2025 ∙ 24.1/2020 (youth helmet) 12/31/2030 ∙ 31.1/2020 12/31/2030 ∙ 41.1/2020 12/31/2030 </span></p>
-                <p class="c14 subtitle"><span class="c2">All SFI Helmets prior to 2015 are not recommended.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">2.5 COMPLIANCE </span></h3>
-                <p class="c3 subtitle"><span class="c2">Membership is a privilege and is not a right. </span></p>
-                <p class="c0 subtitle"><span class="c2">Members who do not comply with the VIKA rules and or the VIKA Executive(s) may be subject to an immediate loss of their practice privileges or other sanction recourse without any refunds of paid membership dues. Drivers are responsible for the conduct of their crew and spectators.</span></p>
-                <p class="c0 subtitle"><span class="c5">Penalties of membership are assessed and adjudged by the VIKA Executive without recourse by the offender. </span></p>
-                <p class="c0 subtitle"><span class="c5">Drivers are responsible for their crew and spectators they bring. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">2.6 TIRE COMPOUNDS </span></h3>
-                <p class="c3 subtitle"><span>Tire treatment (ie: doping) is not allowed. </span><span class="c20 c6">Only VIKA approved tires may be used. </span><span>Refer to WCKC for list of approved tire compounds: https://westcoastkartclub.ca/Rules-WCKC.html</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">2.7 NOISE </span></h3>
-                <p class="c3 subtitle"><span class="c2">Maximum kart engine sound level permitted is 82db as measured in accordance with VIKA specifications. All karts are to be equipped with an air box and an appropriate silencer. Note: Some engine packages may not require an additional silencer, but it is the driver’s responsibility to ensure their engine does not exceed the 82 db level. (Measured 100’ perpendicular to the straightaway at a height of 3’) as determined by the VIKA Executive or their designated authorities.</span></p>
-                <p class="c0 subtitle"><span class="c2">All karts must use an air box with the exception of kid karts and 4 Cycle engines. CIK classes must use CIK approved air box, F80 &amp; F125 to use CIK approved air box. </span></p>
-                <p class="c0 subtitle"><span class="c2">All karts in the grids or pit area that are being warmed up must have exhaust pointed towards the track.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">2.8 SAFETY </span></h3>
-                <p class="c3 subtitle"><span class="c2">A first aid kit is highly recommended.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">2.9 PIT SPACES </span></h3>
-                <p class="c3 subtitle"><span class="c2">All pits will require: Fire extinguisher, drain pan, garbage container/bag.</span></p>
-                <p class="c0 subtitle"><span class="c2">All asphalt surfaces are to be protected and kept free of debris at all times. It is also recommended that a tarp/carpet be placed under any area a kart will be worked on.</span></p>
-                <p class="c0 subtitle"><span class="c2">To prevent asphalt and other surfaces from becoming contaminated with fuel/oil or other harmful products, DRIP PANS must be used at all times.</span></p>
-                <p class="c0 subtitle"><span class="c2">Floor dry must be applied to all spills immediately and cleaned up before the racer leaves the site.</span></p>
-                <p class="c0 subtitle"><span class="c2">Event Organizers shall provide absorptive products for spills.</span></p>
-                <p class="c0 subtitle"><span class="c2">Damaged kart parts, tires, used fuel containers and any other discard-able material are to be removed from the facility on completion of practice.</span></p>
-                <p class="c0 subtitle"><span class="c2">All fluids (fuel, oil, lubricants, cleaners, etc.) are to be removed from the facility on completion of practice or race.</span></p>
-                <p class="c0 subtitle"><span class="c5">NO disposal of fuel/oil, or fuel containers on site.</span></p>
-                <p class="c0 subtitle"><span class="c2">All safety wire, tie straps, etc. are to be picked up and put into the garbage at all times.</span></p>
-                <p class="c0 subtitle"><span class="c5">Trailer tongues to be supported. i.e. set on a board so they don’t dig into the pavement.</span></p>
-                <p class="c0 subtitle"><span class="c2">Entrants/user of the facility are responsible for putting garbage in the garbage bin.</span></p>
-                <p class="c0 subtitle"><span class="c2">Pit spaces must be left clean at the end of the event.</span></p>
-                <p class="c0 subtitle"><span class="c2">Tent pegs are not allowed to be used to secure tents on paved surfaces.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h1 class="c13"><span class="c25">3.0 SUPPLEMENTARY COMPETITION RULES </span></h1>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">3.1 COMPETITION CLASSES</span></h3>
-                <p class="c3 subtitle"><span class="c2">Refer to most current WCKC competition classes. Subject to VIKA particularization. https://westcoastkartclub.ca/Rules-WCKC.html</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">3.2 KART ENTRY FEES </span></h3>
-                <p class="c3 subtitle"><span class="c2">Refer to the most recent event registration information.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">3.3 MEMBERSHIP FOR COMPETITION </span></h3>
-                <p class="c3 subtitle"><span class="c2">To compete in a club event, entrants must meet the requirements below:</span></p>
-                <p class="c0 subtitle"><span class="c2">Drivers must meet the criteria regarding age and weight, as set forth in the CLUB COMPETITION CLASSES for the current year.</span></p>
-                <p class="c0 subtitle"><span class="c2">Be a current member in good standing of the club or possess a valid day membership.</span></p>
-                <p class="c0 subtitle"><span class="c2">OR</span></p>
-                <p class="c0 subtitle"><span class="c2">Be a member of an affiliated club that VIKA has a reciprocal agreement with.</span></p>
-                <p class="c0 subtitle"><span class="c2">Only VIKA Club members in good standing will receive Club Championship Points.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">3.4 SAFETY TECH APPROVAL </span></h3>
-                <p class="c0 subtitle"><span class="c2">Kart displaying a current tech sticker on Nassau panel or band on the right front spindle, and </span></p>
-                <p class="c0 subtitle"><span class="c2">Submitting of tech card to the Safety Tech inspector(s). </span></p>
-                <p class="c0 subtitle"><span class="c2">If a driver is caught on the racing circuit at any time without Tech Approval, they may be disqualified for the day. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c9">3.5 REFUNDS </span></h3>
-                <p class="c3 subtitle"><span class="c2">
-                   After a driver has signed the facility waiver, no refunds will be granted. <br>
-                   We do not issue refunds after race registration closes.
-                   </span>
-                </p>
-                <h3 class="c4"><span class="c9">3.6 WORKERS/STAFFING</span></h3>
-                <p class="c3 subtitle"><span class="c2">A general, limited description of VIKA Club Roles is provided below.</span></p>
-                <p class="c0 subtitle"><span class="c6">Race Director:</span><span class="c2">&nbsp;The Race Director will be that official having complete charge of all race officials, technical inspectors, turn marshals, the track and karts during the event. The Race Director will disqualify or penalize, through signals from the flagman, any driver who in their opinion, or that of their observers, is in violation of the rules or whose kart is or has become unsafe. The decisions made by the race director to warn, penalize, or disqualify any driver is not eligible for protest. The Race Director may shorten any race before karts have left the grid. All events will have a race director appointed and will be introduced at the drivers meeting.</span></p>
-                <p class="c0 subtitle"><span class="c6">Assistant Race Director:</span><span class="c2">&nbsp;This official will work directly with the Race Director and serves as an addition set of eyes and ears. It is up to the Race Director to allow or not allow, the Assistant Race Director to make on track decisions. </span></p>
-                <p class="c0 subtitle"><span class="c6">Head Flagman:</span><span class="c2">&nbsp;The Head Flagman is the official in complete charge of the flags. The Head Flagman will adhere to the rules and regulation in this manual as well as following the instructions from the Race Director. The Head Flagman’s signals are to be obeyed without exception. If necessary, the Head Flagman will conduct a meeting for all drivers prior to the start of the event to explain the flags, their use, and rules. </span></p>
-                <p class="c0 subtitle"><span class="c6">Corner Marshalls:</span><span class="c2">&nbsp;Corner Marshals will be strategically placed around the track to use flags, as instructed and when necessary, to signal drivers to hazardous situations. Corner Marshalls will also report any rule infraction to the Race Director. It is not the duty of the Corner Marshall to assist drivers at the scene of the accident or incident in separating their karts or getting them underway. Their responsibility lies in warning oncoming traffic to a hazardous situation, and inform race control of the need for additional resources. Corner Marshals shall be at least 18 years of age. </span></p>
-                <p class="c0 subtitle"><span class="c6">Grid Steward:</span><span class="c2">&nbsp;The Grid Steward shall be that official(s) having the charge of Grid area. It is the Grid Steward’s responsibility to keep all unauthorized person(s) out of restricted areas, grid classes, and report any issues to the race director. </span></p>
-                <p class="c0 subtitle"><span class="c6">Head Technical Inspector/Director:</span><span class="c2">&nbsp;The Head Technical Inspector will be that official having charge of pre- and post-race inspections in a designated area where technical inspections are performed. They are solely responsible for appointing Assistant Technical Inspectors. The Head Technical Inspector will designate an area, the “Impound Area”, where karts and drivers will be checked for minimum class weight, fuel legality, maximum kart size, engine legality, exhaust system legality, body work specifications, legal attachment of weights, etc. Post-race scale and tech areas are off limits to person(s) other than the competitor. Competitors are under the direction of the Head Technical Inspector or their designee while in the inspection area. Entrants that leave the inspection area without the approval of the Head Technical Inspector or their designee, are subject to disqualification. </span></p>
-                <p class="c0 subtitle"><span class="c6">Chief Scorer:</span><span class="c2">&nbsp;The Chief Scorer is the official responsible for all timing and scoring of the event. The Chief Scorer will keep the Head flagman informed of positions, laps complete and or time of event. </span></p>
-                <p class="c0 subtitle"><span class="c15 c6">Overlapping Roles:</span></p>
-                <p class="c0 subtitle"><span class="c6">Penalties:</span><span class="c2">&nbsp;The Race Director may levy any of the following penalties for infractions committed by a driver crew or any spectator associated with a driver or crew. </span></p>
-                <p class="c0 subtitle"><span class="c2">Finishing position may be changed by one or more positions. </span></p>
-                <p class="c0 subtitle"><span class="c2">Disqualification while on track or at scale by use of black flag. </span></p>
-                <p class="c0 subtitle"><span class="c2">Disqualification from race or event due to an infraction either on or off track. Note: Disqualification cannot be retroactive to previous days or events. </span></p>
-                <p class="c0 subtitle"><span class="c2">Race Director can request VIKA levy additional penalties.</span></p>
-                <p class="c0 c17 subtitle"><span class="c2"></span></p>
-                <h3 class="c4"><span class="c11">3.7 PIT SAFETY </span></h3>
-                <p class="c3 subtitle"><span class="c2">The Safety Tech inspectors shall require the following safety and tech items at each pit area: </span></p>
-                <p class="c0 subtitle"><span class="c2">At least 1 (one) copy (digital or printed) of these VIKA Supplemental Club Rules for the current year. </span></p>
-                <p class="c0 subtitle"><span class="c2">At least 1 (one) fire extinguisher 2.5lbs ABC. A first aid kit is highly recommended. </span></p>
-                <p class="c0 subtitle"><span class="c2">Bikes, scooters and skateboards are not allowed during the event when the track is hot, unless allowed in designated areas by the Race Director. </span></p>
-                <p class="c0 subtitle"><span class="c2">VIMC does not allow pets on the premises.</span></p>
-                <p class="c0 subtitle"><span class="c2">Excessive speed (10 km+) by motorized vehicles will result in immediate exclusion. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.8 NEW / ROOKIE KART DRIVERS </span></h3>
-                <p class="c3 subtitle"><span class="c2">All NEW/ROOKIE drivers must wear a contrasting colour X on the back of their helmet. Their kart must be equipped with a contrasting X on the rear number panel. </span></p>
-                <p class="c0 subtitle"><span class="c2">All NEW/ROOKIE drivers will start at the back of their class in all sessions or heats for a minimum of 3 race days and/or at the discretion of the racing rules committee.</span></p>
-                <p class="c0 subtitle"><span class="c2">All NEW/ROOKIE drivers must attend an orientation session given by a VIKA member before practice on race weekends (this is also open to any driver wanting to attend). </span></p>
-                <p class="c0 subtitle"><span class="c2">After 3 races the Rookie/New driver can request to have the rookie status removed at the discretion of the racing rules committee. A simple test and evaluation of driver skills and etiquette will be conducted before removal of the Rookie/new driver designation. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.9 KARTS OFF THE RACING SURFACE </span></h3>
-                <p class="c3 subtitle"><span class="c2">Flagging Marshals / Race Officials may assist all junior drivers. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.10 POST RACE TECH </span></h3>
-                <p class="c3 subtitle"><span class="c2">There shall be absolutely no excessive speed in the shut-down area. All karts must stop at or before the stop line/sign. Absolutely no driving onto the scales </span></p>
-                <p class="c0 subtitle"><span class="c2">Driver and kart must weigh-in after qualifying or Heat #1, Heat #2 and Final. If a driver is found to be under-weight they will be disqualified from the qualifying, heat or final. No person shall be permitted to assist or meet with any driver prior to weigh-in without permission of the Scale Technician. Failure to comply may result in a driver being disqualified from the session, (Qualifying &amp; Heat #1, Heat #2 or Final). </span></p>
-                <p class="c0 subtitle"><span class="c2">All competitors must weigh-in except for medical reasons as a result of an on-track incident. </span></p>
-                <p class="c0 subtitle"><span class="c2">The Scale Marshal shall have the authority to determine weight legality. </span></p>
-                <p class="c0 subtitle"><span class="c2">All karts and drivers must proceed to legality tech and must be approved to receive points. </span></p>
-                <p class="c0 subtitle"><span class="c2">Fuel, tires, chassis, engine and engine components shall be subject to post race legality technical inspections at the discretion of the Technical Director or Race Director. </span></p>
-                <p class="c0 subtitle"><span class="c2">It is the driver’s responsibility to ensure they clear Tech before leaving the scale area. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.11 TIRES </span></h3>
-                <p class="c3 subtitle"><span class="c2">All tires may be marked as per tech procedures after qualifying, heat #1 or heat #2 at the discretion of the Technical Director. </span></p>
-                <p class="c0 subtitle"><span class="c2">Any tires, which have not been approved for replacement by the Technical Director, or do not display the proper tech marking, shall be considered illegal. </span></p>
-                <p class="c0 subtitle"><span class="c2">See WCKC Class listing for tire compounds. https://westcoastkartclub.ca/Rules-WCKC.html</span></p>
-                <p class="c0 subtitle"><span class="c2">No use of tire compound softeners is allowed. </span></p>
-                <p class="c0 subtitle"><span class="c2">Tires checked with a durometer may not be more than 5 points lower than the factory known readings. Tires to be checked when the core temperature is 70°F. </span></p>
-                <p class="c0 subtitle"><span class="c2">No tire warming allowed. </span></p>
-                <p class="c0 subtitle"><span class="c2">Any kart that has illegal compound tires for its class will be denied access to the grid prior to the start of the race. </span></p>
-                <p class="c0 c17 subtitle"><span class="c2"></span></p>
-                <h3 class="c4"><span class="c11">3.12 ENGINE </span></h3>
-                <p class="c3 subtitle"><span class="c2">The Race Director reserves the right to impound the engine and seal it for technical inspection at a later time. Refusal to comply with the technical inspection request shall result in disqualification for the event. </span></p>
-                <p class="c0 subtitle"><span class="c2">LO206 header wrap required on header only. All 4 cycle-headers must be wrapped.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.13 BALLAST </span></h3>
-                <p class="c3 subtitle"><span class="c2">All weights must be painted white prior to installation and mounted with an 8 mm bolt and double-lock nut as a minimum standard. </span></p>
-                <p class="c0 subtitle"><span class="c2">For all classes, no more than 50 lbs of ballast many be added to the vehicles total weight. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.14 REAR BUMPER </span></h3>
-                <p class="c3 subtitle"><span class="c2">Wide rear bumpers are mandatory in all Junior and Senior classes as per ASN. All dimensions are covered in the </span></p>
-                <p class="c0 subtitle"><span class="c2">ASN Technical Regulations. In addition, VIKA requires a 5-inch minimum height on the outside edges and <b style="color:red !important;"> must be a plastic bumper. </b> </span></p>
-                <p class="c0 subtitle"><span class="c2">All full size chassis must use a homologated rear bumper.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.15 DRIVER’S WEAR </span></h3>
-                <p class="c0 subtitle"><span class="c2">Driver’s safety equipment to be as per ASN Canada FIA Sporting Regulations. Driver’s suits are mandatory. Other equipment may be permitted if it has been reviewed and approved during pre-race inspection.</span></p>
-                <p class="c0 subtitle"><span class="c2">Rib Protectors are highly recommended as per ASN Canada FIA Sporting Regulations. </span></p>
-                <p class="c0 subtitle"><span class="c2">Helmet supports are highly recommended but not mandatory. </span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.16 FRONT BUMPER </span></h3>
-                <p class="c0 subtitle"><span class="c2"><b style="color:red !important;">CIK approved Drop Down bumper system is REQUIRED.</b></span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.17 KART NUMBERS </span></h3>
-                <p class="c3 subtitle"><span class="c2">Kart numbers assigned at the beginning of the race season cannot be changed until the following season. This makes scoring much easier to track racers during the year. </span></p>
-                <p class="c0 subtitle"><span class="c2">Karters assigned racing numbers from the previous season will have a first right of use as long as they are a paid up member in good standing.</span></p>
-                <p class="c1"><span class="c7"></span></p>
-                <h3 class="c4"><span class="c11">3.18 FLAGS:</span></h3>
-                <p class="c3 subtitle"><span class="c2">Unless otherwise notified by VIKA Officials, flags will be as follows:</span></p>
-                <p class="c0 subtitle"><span class="c6">Green Flag or Green Light:</span><span class="c2">&nbsp;Displayed at the start of competition or practice and kept visible as long as the track is clear for racing.</span></p>
-                <p class="c0 subtitle"><span class="c6">Red Flag:</span><span class="c2">&nbsp;Raise your arm in the air to warn following karts and stop in a controlled manner so that you do not endanger other karts. Do not work on your kart. Wait for instruction from the Race Officials.</span></p>
-                <p class="c0 subtitle"><span class="c6">Yellow Flag</span><span class="c2">: Be prepared to stop. The track could be blocked by an accident, emergency vehicle or debris. Raise your arm in the air to warn following karts if possible, slow down and hold your position. DO NOT PASS ON A YELLOW FLAG. If the Host Flagman displays a </span></p>
-                <p class="c0 subtitle"><span class="c2">Yellow Flag, hold your position and use caution all the way around the track. Do not begin racing again until the Host Flagman displays a Green Flag to resume racing.</span></p>
-                <p class="c0 subtitle"><span class="c6">Yellow and Red Flags Waved Together:</span><span class="c2">&nbsp;There is a Restart of the race. Drivers will reform in a pack, at a slow pace for the Restart.</span></p>
-                <p class="c0 subtitle"><span class="c6">Blue Flag with Yellow Stripe (Blue Flag):</span><span class="c2">&nbsp;Faster kart is overtaking you and may lap you. To prevent a hazardous condition on the track, make room for the overtaking kart. The Blue Flag can be displayed at any corner at the direction of the Head Flagman as long as there is direct communication between the Flagman and Corner workers.</span></p>
-                <p class="c0 subtitle"><span class="c6">White Flag:</span><span class="c2">&nbsp;This flag is a courtesy flag that indicates that there may be one (1) lap of racing is left. Do not assume that the next flag waved will be a Checkered Flag; you should always race to the First Checkered Flag.</span></p>
-                <p class="c0 subtitle"><span class="c6">Checkered Flag:</span><span class="c2">&nbsp;Racing is finished and the Heat is completed. Discontinue racing and return to the Pits. Enter the Pit Area slowly and stop before you get to the scales. You must have your kart and yourself weighed.</span></p>
-                <p class="c0 subtitle"><span class="c6">Checkered and Black Flag Waved Together:</span><span class="c2">&nbsp;Racing is finished and the Heat is completed under Protest. Discontinue racing and return to the Pits. Enter the Pit Area slowly and stop before you get to the scales. You must have your kart and yourself weighed.</span></p>
-                <p class="c0 subtitle"><span class="c6">Black Flag by the Flagman:</span><span class="c2">&nbsp;A rolled Black Flag, given horizontal to the racing surface to any Driver will be a warning of intense driving and to keep it clean. If the Black Flag is waved unfurled at you, it may be accompanied by a chalkboard with the number of the kart or karts to be disqualified. Return to the Pits and check with the Race Director regarding the reason.</span></p>
-                <p class="c0 subtitle"><span class="c6">Black Flag with an Orange Ball:</span><span class="c2">&nbsp;Slow down; stay on the outside of the track and return to the Pits at the proper entrance. You have a dangerous or mechanical problem. Do Not Continue Racing until the problem is corrected.</span></p>
-                <p class="c0 subtitle"><span class="c6">Yellow Flag with Black Border:</span><span class="c2">&nbsp;(Transponder Flag): IF shown you are not being scored. Proceed into Hot Pit install Transponder and return to race if applicable. Driver will be scored in last position if raced without or faulty transponder.</span></p>
-                <p class="c0 subtitle"><span class="c15 c6">During the Race:</span></p>
-                <p class="c0 subtitle"><span class="c6">Black Flags:</span><span class="c2">&nbsp;Black flags will be displayed when the Race Director decides that a kart must exit the track. A waved black flag will be shown to the driver and their kart number will be displayed on a pit board. If the Black Flag and the pit board needs to be displayed at a location other than the flag stand, it will be reviewed at the drivers meeting. A driver may be ordered off the track if the Race Director or Head Flagman feels the driver has violated rules, is driving in a reckless, inappropriate or unsportsmanlike manner. The decision to order or not to order a driver to the pits is not eligible for protest.</span></p>
-                <p class="c0 subtitle"><span class="c2">A Rolled Black Flag will be used to warn a driver for minor violations.</span></p>
-                <p class="c0 subtitle"><span class="c2">The Black Flag with Orange Ball (Mechanical Black Flag) will be used when the Race Director or Head Flagman feels there is a safety issue with a kart on the track. When a driver is ordered off the track under this flag they will be scored in their appropriate position.</span></p>
-                <p class="c0 subtitle"><span class="c2">Drivers that receive the Black Flag will no longer be scored, and will receive no points for the Pre-Final or Final or earned grid position in Qualifying or the Pre-Final. At the Race Director’s discretion, a driver and their crew may be disqualified from further participation in the event for flagrante infractions from the driver or crew.</span></p>
-                <p class="c0 subtitle"><span class="c2">Failure to obey a black flag is a flagrante violation and will be subject to expulsion from the event and further disciplinary action up to and including suspension.</span></p>
-                <p class="c0 subtitle"><span class="c6">Blue Flags:</span><span class="c2">&nbsp;When a Blue Flag is shown to a when they are at risk of being lapped by faster traffic. When a driver is being lapped, they will give the right of way to the overtaking driver(s) and should indicate what the safest way to pass by pointing is.</span></p>
-                <p class="c0 subtitle"><span class="c6">Yellow Flags: </span><span>When a Corner Marshal displays a yellow flag, it signifies caution at their section of the track. Use caution, be prepared to stop until the driver is past this section. No passing is allowed.</span></p>
-                <p class="c0 subtitle"><span>When the Head Flagman displays the yellow flag, it signifies a full course caution. Slow down, be prepared to stop, and do not resume racing until the Head Flagman displays the Green Flag.</span></p>
-                <p class="c0 subtitle"><span class="c15 c6">Red Flags:</span></p>
-                <p class="c0 subtitle"><span class="c2">At the option of the Race Director or Head Flagman a Red Flag may be displayed when an unsafe condition exists on the track. A Red Flag is mandatory when a kart overturns, a driver is ejected from a kart or there is an injured driver requiring medical attention. </span></p>
-                <p class="c0 subtitle"><span class="c2">When the Red Flag is displayed all drivers will come to a stop in a safe and controlled manner, with their arm raised to warn other drivers. If a Red Flag is displayed prior to all karts being scored on the first lap, a restart is required using the original starting order. Once all karts running have completed a lap and have been scored, the last completed lap order will be used. Lineups will be determined by the official scorer.</span></p>
-                <p class="c0 subtitle"><span class="c6">During Red Flag conditions: </span><span>No work will be permitted on the karts.</span></p>
-                <p class="c0 subtitle"><span class="c6">Option 1:</span><span class="c2">&nbsp;All karts will be stopped and held on the track. When the unsafe condition has been cleared, karts will be permitted to restart, will be re-aligned and started. Karts will have the same 90-second rule as if they were on the grid.</span></p>
-                <p class="c0 subtitle"><span class="c6">Option 2:</span><span class="c2">&nbsp;All karts will be removed from the track and quarantined in a secure area, until such time the Race Director chooses to restart the group. At this time karts will be permitted to restart, will be re-aligned and started. Karts will have the same 90-second rule as if they were on the grid.</span></p>
-                <p class="c0 subtitle"><span class="c2">All karts involved in an incident that requires a Red Flag, will require a safety check by the Head Technical Inspector, or their designee before being allowed to return to the track.</span></p>
-                <p class="c0 subtitle"><span class="c2">Karts will not be allowed to restart following a Red Flag:Any kart that has been determined by the Race Director to be the cause of a Red Flag. This Decision by the Race Director is not eligible for protest.</span></p>
-                <p class="c0 subtitle"><span class="c2">The Race Director or Head Flagman, prior to the restart may Black Flag a driver that will be subject to a Black Flag under race conditions.</span></p>
-                <p class="c0 subtitle"><span class="c2">If a kart that has dropped out of the race prior to the Red Flag, will not be eligible to restart. All restarts following a Red Flag will be single file.</span></p>
-                <p class="c0 subtitle"><span class="c6">White Flag:</span><span class="c2">&nbsp;The White Flag may display signifying the start of the last lap. This is displayed as a courtesy and may not always be shown. Display of the White Flag does not automatically signify the next lap the end of the race.</span></p>
-                <p class="c0 subtitle"><span class="c6">Checkered Flag:</span><span class="c2">&nbsp;The Checkered Flag signifies the end of the race, regardless of the number of laps or elapsed time. When you receive the checkered flag, your race is over.</span></p>
-                <p class="c0 subtitle"><span class="c6">Checkered Flag with Black Flag:</span><span class="c2">&nbsp;Finish is under protest. This is used when there is suspicion of, or reports of, or rough driving, or unsportsmanlike conduct are present. This means that the race was finished under protest by the Race Director or Head Flagman. After consulting with race officials, the Race Director will announce their finding/ruling to the competitor(s) involved and may adjust the finishing position accordingly.</span></p>
-             </div>
-        </div>
-
-      </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="footer bg-dark py-5" data-bs-theme="dark">
-        <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
-          <div class="border-bottom text-center pb-4" style="overflow: hidden;">
-            <a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="index.html">
-              <span class="text-light opacity-90">Vancouver Island Karting Association</span>
-            </a>
-            <ul class="nav justify-content-center py-1 pb-sm-2">
-              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="rules.html">Rules</a></li>
-              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="membership.html">Membership</a></li>
-              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="index.html#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
-            <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0">
-              <a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-3" target="_blank" href="https://www.facebook.com/groups/2809072876088221" aria-label="Facebook">
-                <i class="ai-facebook"></i>
-              </a>
+      <!-- Page wrapper -->
+      <main class="page-wrapper">
+         <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
+         <header class="navbar navbar-expand-lg fixed-top bg-light">
+            <div class="container">
+               <!-- Navbar brand (Logo) -->
+               <a class="navbar-brand pe-sm-3" href="index.html">
+               Vancouver Island Karting Association
+               </a>
+               <!-- Mobile menu toggler (Hamburger) -->
+               <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <!-- Navbar collapse (Main navigation) -->
+               <nav class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav navbar-nav-scroll ms-auto" style="--ar-scroll-height: 520px;">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="rules.html">Rules</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="membership.html">Membership</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                     </li>
+                  </ul>
+               </nav>
             </div>
-            <p class="nav fs-sm order-sm-1 text-center mb-0">
-              <span class="text-body-secondary">&copy; All rights reserved Vancouver Island Karting Association.</span>
-            </p>
-            <p class="nav fs-sm order-sm-1 text-center mb-0">
-              <span class="text-body-secondary">Website by</span>
-              <a class="nav-link d-inline fw-normal p-0 ms-1" href="https://mnursey.github.io/" target="_blank" rel="noopener">Mitchell Nursey</a>
-            </p>
-          </div>
-        </div>
+         </header>
+         <!-- Pricing plans -->
+         <section class="container py-5 mt-5 mb-lg-3 mb-xl-4 mb-xxl-5">
+            <!-- Page title -->
+            <div class="text-center pb-3 pt-lg-2 pt-xl-4 my-1 my-sm-3 my-lg-4">
+               <h1 class="display-2">Rules</h1>
+               <p class="fs-lg mb-0">2024 Rules will be released shortly</p>
+            </div>
+            <!-- Plans -->
+            <div class="row row-cols-1 flex-nowrap pb-4 overflow-auto">
+               <div class="col" style="min-width: 19rem;">
+                  <h2>
+                     2023 Summer Series Rules
+                  </h2>
+                  <p>
+                     <b style="color:red !important">Our rules will follow the 2023 WCKC Rules with the following amendments:</b>
+                  </p>
+                  <ol>
+                     <li>
+                        Motors that were given the engine claim rules in the 2023 WCKC rules, but did not have an engine claim rule previously will not have the engine claim rule applied.
+                        Motors with an engine claim rule in the 2022 and 2023 WCKC rules will continue to have a engine claim rule.
+                     </li>
+                  </ol>
+                  <p>
+                     <b style="color:red !important">No leaded fuel for all VIKA 2024 events (including events using 2023 rules).</b>
+                  </p>
+                  <a target="_blank" href="https://westcoastkartclub.ca/Rules-WCKC.html" class="button">View WCKC 2023 Rules</a>
+                  <a target="_blank" href="https://www.asncanada.ca/karting" class="button">View latest ASN CANADA - Canadian Karting Regulations</a>
+                  <p></p>
+                  <h3>
+                     VANCOUVER ISLAND KARTING ASSOCIATION 2023 WEIGHTS AND CLASSES
+                  </h3>
+                  <h3>JUNIOR 4 CYCLE</h3>
+                  <div class="table-wrapper">
+                     <table style="width: 100%;">
+                        <tbody>
+                           <tr>
+                              <th>
+                                 CLASS
+                              </th>
+                              <th>
+                                 Engine
+                              </th>
+                              <th>
+                                 Min. Weight
+                              </th>
+                              <th>
+                                 Carb / Restrictor
+                              </th>
+                              <th>
+                                 Notes
+                              </th>
+                              <th>
+                                 Related Documents
+                              </th>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Junior 1
+                                 <br> 
+                                 (Ages 7-11, Cadet Chassis)
+                              </td>
+                              <td>
+                                 L0206
+                              </td>
+                              <td>
+                                 250
+                              </td>
+                              <td>
+                                 Green Part #555740
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                 <a href="https://www.asncanada.ca/karting" target="_blank">Briggs</a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Junior 2
+                                 <br> 
+                                 (Ages 12-15)
+                              </td>
+                              <td>
+                                 L0206
+                              </td>
+                              <td>
+                                 320
+                              </td>
+                              <td>
+                                 Stock Slide Part #555590
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                 <a href="https://www.asncanada.ca/karting" target="_blank">Briggs</a>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <br>
+                  <h3>Tag Cadet</h3>
+                  <div class="table-wrapper">
+                     <table style="width: 100%;">
+                        <tbody>
+                           <tr>
+                              <th>
+                                 CLASS
+                              </th>
+                              <th>
+                                 Engine
+                              </th>
+                              <th>
+                                 Min. Weight
+                              </th>
+                              <th>
+                                 Carb / Restrictor
+                              </th>
+                              <th>
+                                 Notes
+                              </th>
+                              <th>
+                                 Related Documents
+                              </th>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Tag Cadet
+                                 <br> 
+                                 (Ages 7-11, Cadet Chassis)
+                              </td>
+                              <td>
+                                 Iame Leopard 100cc	
+                              </td>
+                              <td>
+                                 230
+                              </td>
+                              <td>
+                                 Tillotson HL334AB 23mm bore / Intake 17mm/Exhaust 25mm, Min Squish 2.4mm
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                 <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Tag Cadet
+                                 <br> 
+                                 (Ages 7-11, Cadet Chassis)
+                              </td>
+                              <td>
+                                 Iame Mini Swift	
+                              </td>
+                              <td>
+                                 225
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                 <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Tag Cadet
+                                 <br> 
+                                 (Ages 7-11, Cadet Chassis)
+                              </td>
+                              <td>
+                                 Mini RoK	
+                              </td>
+                              <td>
+                                 225
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                 <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Tag Cadet
+                                 <br> 
+                                 (Ages 7-11, Cadet Chassis)
+                              </td>
+                              <td>
+                                 Mini Rotax	
+                              </td>
+                              <td>
+                                 265
+                              </td>
+                              <td>
+                                 MY20 Inlet restrictor
+                              </td>
+                              <td>
+                                 18mm exhaust restrictor, Cadet Gearing 14/78 mini exhaust part #273137
+                              </td>
+                              <td>
+                                 <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Tag Cadet
+                                 <br> 
+                                 (Ages 7-11, Cadet Chassis)
+                              </td>
+                              <td>
+                                 X125T-MX (green)		
+                              </td>
+                              <td>
+                                 245
+                              </td>
+                              <td>
+                                 Tillotson 23mm HL334AB Carb / Intake 17mm Part # IM111-17mm
+                              </td>
+                              <td>
+                                 Exhaust 22mm Part #12.2624311, Min. Squish 1.8mm, Gearing
+                                 11/78 / Approved Airboxes only Version 2022A										
+                              </td>
+                              <td>
+                                 <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 XM</a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 Tag Cadet
+                                 <br> 
+                                 (Ages 7-11, Cadet Chassis)
+                              </td>
+                              <td>
+                                 X125T-WC (red)		
+                              </td>
+                              <td>
+                                 255
+                              </td>
+                              <td>
+                                 Tillotson 23mm HL334A/HL334AB Carb / Intake 17mm Part # IM111-17mm
+                              </td>
+                              <td>
+                                 Exhaust 22mm Part #20.1467.06, Min Squish 2.4mm,
+                                 Gearing 11/78
+                              </td>
+                              <td>
+                                 <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 XM</a>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <br>
+                  <h3>Tag Junior</h3>
+                  <table style="width: 100%;">
+                     <thead>
+                        <tr>
+                           <th>CLASS</th>
+                           <th>Engine</th>
+                           <th><span style="font-style:inherit;color:black">Min. Weight</span></th>
+                           <th><span style="font-style:inherit;color:black">Carb / Restrictor</span></th>
+                           <th>Notes</th>
+                           <th><span style="font-style:inherit;color:black">Related Documents</span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Tag Junior <br>(Ages 12-15)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">Iame Leopard 125cc</span></td>
+                           <td>330</td>
+                           <td>HL334A/HL334AB</td>
+                           <td>Exhaust 30mm Header Part# A‐125365</td>
+                           <td>
+                              <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Junior <br>(Ages 12-15)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">Iame X30 Jr</span></td>
+                           <td><span style="font-weight:inherit;font-style:inherit">330</span></td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Junior <br>(Ages 12-15)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">PRD Fireball</span></td>
+                           <td>315</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Junior <br>(Ages 12-15)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">RoK Jr.</span></td>
+                           <td>315</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Junior<br>(Ages 12-15)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">Rotax Junior</span></td>
+                           <td>315</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Junior <br>(Ages 12-15)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">X125T (green)</span></td>
+                           <td>330</td>
+                           <td>HW‐44A 24mm, 30mm</td>
+                           <td>30mm Exhaust Header Part# X125‐220162 / Approved Airboxes only Version 2022</td>
+                           <td>
+                              <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 MX</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Junior <br>(Ages 12-15)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">X125 WC (red)</span></td>
+                           <td>330</td>
+                           <td>Tillotson HW32A</td>
+                           <td>Exhaust Header Part# 20.14230.06</td>
+                           <td>
+                              <a href="http://westcoastkartclub.ca/uploads/X125T-WC_Homologation_1_2023%20opt.pdf" target="_blank">X125 WC</a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br>
+                  <h3>Senior 4 Cycle</h3>
+                  <table style="width: 100%;">
+                     <thead>
+                        <tr>
+                           <th>CLASS</th>
+                           <th>Engine</th>
+                           <th><span style="font-style:inherit;color:black">Min. Weight</span></th>
+                           <th><span style="font-style:inherit;color:black">Carb / Restrictor</span></th>
+                           <th>Notes</th>
+                           <th><span style="font-style:inherit;color:black">Related Documents</span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Senior Briggs<br>(Ages 15+)</td>
+                           <td>Briggs L0206</td>
+                           <td>360</td>
+                           <td>Stock Black Slide #555590</td>
+                           <td></td>
+                           <td>
+                              <a href="https://www.asncanada.ca/karting" target="_blank">BRIGGS</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Senior 4 Cycle Open<br> (Ages 15+)</td>
+                           <td>Stock Honda<br>4X 160/200</td>
+                           <td>365</td>
+                           <td>No Restrictor</td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>Senior 4 Cycle Open<br> (Ages 15+)</td>
+                           <td>World Formula</td>
+                           <td>380 </td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td>Senior 4 Cycle Open<br> (Ages 15+)</td>
+                           <td><span style="font-weight:inherit;font-style:inherit">Open Honda</span><br><span style="font-weight:inherit;font-style:inherit">Honda GX200</span></td>
+                           <td>380 </td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br>
+                  <h3>Tag Senior</h3>
+                  <table style="width: 100%;">
+                     <thead>
+                        <tr>
+                           <th>CLASS</th>
+                           <th>Engine</th>
+                           <th><span style="font-style:inherit;color:black">Min. Weight</span></th>
+                           <th><span style="font-style:inherit;color:black">Carb / Restrictor</span></th>
+                           <th>Notes</th>
+                           <th><span style="font-style:inherit;color:black">Related Documents</span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Tag Senior<br>(Ages 16+)</td>
+                           <td>Iame Leopard</td>
+                           <td>355</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Senior<br>(Ages 16+)</td>
+                           <td><span>Iame X30</span></td>
+                           <td>365</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Senior<br>(Ages 16+)</td>
+                           <td><span>ROK GP</span></td>
+                           <td>375</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Senior<br>(Ages 16+)</td>
+                           <td>Rotax</td>
+                           <td>360</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Senior<br>(Ages 16+)</td>
+                           <td>X125T (green)</td>
+                           <td>370</td>
+                           <td>Tillotson HW‐44A 24mm bore Only</td>
+                           <td></td>
+                           <td>
+                              <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 MX</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Senior<br>(Ages 16+)</td>
+                           <td><span>X125 WC (red)</span></td>
+                           <td>370</td>
+                           <td>Tillotson HW32A</td>
+                           <td>Approved Airboxes only Version 2022A</td>
+                           <td>
+                              <a href="http://westcoastkartclub.ca/uploads/X125T-WC_Homologation_1_2023%20opt.pdf" target="_blank">X125 WC</a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br>
+                  <h3>Tag Masters</h3>
+                  <table style="width: 100%;">
+                     <thead>
+                        <tr>
+                           <th>CLASS</th>
+                           <th>Engine</th>
+                           <th>Min. Weight</th>
+                           <th>Carb / Restrictor</th>
+                           <th>Notes</th>
+                           <th>Related Documents</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Tag Masters<br>(Ages 32+)</td>
+                           <td>Iame Leopard</td>
+                           <td>380</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://www.tagracing.net/" target="_blank">TAG USA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Masters<br>(Ages 32+)</td>
+                           <td>Iame X30</td>
+                           <td>385</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://www.superkartsusa.com/rulebook.html" target="_blank">SKUSA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Masters<br>(Ages 32+)</td>
+                           <td>ROK GP</td>
+                           <td>400</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://rokcupusa.com/rules/rok-cup-usa-series/" target="_blank">ROK USA</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Masters<br>(Ages 32+)</td>
+                           <td>Rotax</td>
+                           <td>385</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <a href="https://maxchallenge.ca/regulations/" target="_blank">RMC</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Masters<br>(Ages 32+)</td>
+                           <td>X125T (green)</td>
+                           <td>395</td>
+                           <td>Tillotson HW‐44A 24mm bore</td>
+                           <td>Approved Airboxes only Version 2022A</td>
+                           <td>
+                              <a href="http://westcoastkartclub.ca/uploads/X125T-MX_Homologation_2022A.pdf" target="_blank">X125 MX</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Tag Masters<br>(Ages 32+)</td>
+                           <td>X125 WC (red)</td>
+                           <td>395</td>
+                           <td>Tillotson HW32A</td>
+                           <td>Approved Airboxes only Version 2022A</td>
+                           <td>
+                              <a href="http://westcoastkartclub.ca/uploads/X125T-WC_Homologation_1_2023%20opt.pdf" target="_blank">X125 WC</a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br><br>
+
+                  <h4 style="color: red;">
+                     Competition Age Requirements:
+                  </h4>
+                  <p>
+                      Age categories are based on the calendar year. The driver must reach the minimum age and not exceed the maximum age during the calendar year.
+                  </p>
+                  <p>
+                     A driver who turns age 8 during the calendar year can start racing as a micro/Cadet while age 7.
+                  </p>
+                  <p>
+                     A Junior driver who turns age 15 during the calendar year can start racing as a Senior while age 14.
+                  </p>
+                  <p>
+                     A Junior driver who turns age 15 during the calendar year may remain a Junior for the remainder of the calendar year. 
+                     A Junior driver cannot be age 16.
+                  </p>
+                  <p>
+                     <b>Competition Age:</b> A driver’s competition age is determined by the age that they will be on December 31 of that year. For example; A driver is 9, but will turn 10 in November. As their age on December 31 will be 10, that driver is considered to be 10 for that year, but can take advantage of the
+                     Option Year if chooses.
+                  </p>
+                  <br><br>
+
+
+                  <h1>VIKA Supplementary Competition Rules<br />Approved for 2023</h1>
+                  <p>The information contained within this rule package is intended as a supplement to the ASN CANADA FIA GENERAL COMPETITION REGULATIONS and may be incomplete and is subject to change by the club executive without further notice. Where there is a conflict between the rules stated herein and ASN rules, these rules shall take precedence. To completely understand the scope of the entire club rules contract, it is recommended that all members acquire and familiarise themselves with the rules as set out in the ASN competition regulations and technical manual. For interpretation or clarification of these rules contact the Race Director.</p>
+                  <h2>1.0 INTRODUCTION</h2>
+                  <p>Vancouver Island Kart Association, further referred to as VIKA, is a private membership club incorporated as a not for profit society with the mandate to promote the sport of karting.</p>
+                  <p>VIKA Rule book consist of 2 parts:</p>
+                  <p>Part 1: General club rule set including rules and regulations for practising with VIKA on non-racing dates.</p>
+                  <p>Part 2: Competition rule set including rules and regulations for club racing with VIKA.</p>
+                  <p>Both rule sets work in conjunction with each other. Please read them carefully and familiarise yourself to avoid confusion and disappointment while practising and racing with VIKA.</p>
+                  <p>If it is not listed in this rule book, assume it is not allowed. </p>
+                  <h2>2.0 GENERAL</h2>
+                  <h3>&nbsp;2.1 RELEASE OF LIABILITY</h3>
+                  <p>All persons who enter the premises must sign a &ldquo;RELEASE OF LIABILITY&rdquo; form before being allowed on the premises.</p>
+                  <p>All visitors, drivers, officials, mechanics, and parents of juniors are required to sign the &ldquo;RELEASE OF LIABILITY&rdquo; form.</p>
+                  <p>At race weekends all spectators entering the facility must obtain a wristband and sign the general waiver. Spectators must not enter restricted areas of the facility without having obtained a wristband from registration.</p>
+                  <p>Restricted areas include, but are not restricted to the: racing surface, run off areas, grid area, scale area, tech area, timing, scoring, flagging stands and any other area used to run the event. Generally anywhere other than the parking lot and the grandstands at the entrance to the property.</p>
+                  <p>All minors must submit a &ldquo;RELEASE OF LIABILITY&rdquo; and &ldquo;HOLD HARMLESS AGREEMENT&rdquo; at any time an adult would have to sign a &ldquo;RELEASE OF LIABILITY&rdquo;.</p>
+                  <p>All competitors, mechanics, etc. must sign the &ldquo;RELEASE OF LIABILITY&rdquo; and &ldquo;HOLD HARMLESS AGREEMENT&rdquo;.</p>
+                  <p>Upon payment of entry fees, the Registrar will issue the appropriate armbands and Tech Sheets.</p>
+                  <h3>2.2 MEMBERSHIP</h3>
+                  <p>Membership is a privilege and is not a right.</p>
+                  <p>A membership is required for drivers to participate within the club's races.</p>
+                  <p>A one day licence is available. A fee will be charged for a one-day licence. No licence is required for open practice days. </p>
+                  <p>To compete in a club event, entrants must meet the requirements below:</p>
+                  <p>Be a current member in good standing of the club or possess a valid day membership, or</p>
+                  <p>Be a member of an affiliated club that VIKA has a reciprocal agreement with.</p>
+                  <p>Drivers must meet the criteria set forth in the CLUB COMPETITION CLASSES.</p>
+                  <p>Members who do not comply with the VIKA rules may be subject to an immediate loss of their practice privileges or other sanction recourse without any refunds of paid membership dues. Drivers are responsible for the conduct of their crew and spectators.</p>
+                  <p>Penalties of membership are assessed and adjudged by the VIKA Executive without recourse by the offender.</p>
+                  <h3>2.3 TRACK OPERATIONS</h3>
+                  <p>Karts, ATVs, scooters, bikes, skateboards, and other non-medical mobility devices are not to be operated in the pit area or on the track.</p>
+                  <p>Karts being pushed on kart stands to the hot pit area are not permitted to be running.</p>
+                  <p>Karts are not to be operated under their own power in the pit area at any time. Must be in control and outside of your kart.</p>
+                  <p>Parking on site is not guaranteed, parking is permitted to paying customers on a first come, first serve basis. </p>
+                  <p>VIMC does not allow pets on the premises.</p>
+                  <h3>2.4 SAFETY EQUIPMENT </h3>
+                  <p>Driver&rsquo;s safety equipment to be as per ASN Canada FIA Sporting Regulations and or approved safety apparel determined during pre-race tech. </p>
+                  <p>During all on track sessions, including practices, drivers must wear the required driver&rsquo;s racing equipment as defined in these regulations. </p>
+                  <p>Allowable Helmets Helmets must comply with the following prescriptions: For drivers under 15 years old: Snell-FIA CM (Snell-FIA CMS2016 and Snell-FIA CMR2016) For drivers over 15 years old: Snell-Foundation K2015, K2020, SA2015, SA2020, M2015, M2020R, M2020D FIA 8859-2015, FIA 8860-2010, FIA 8860-2018, FIA 8860-2018-ABP Snell-FIA CM (Snell-FIA CMS2016, Snell-FIA CMR2016).In accordance with Appendix L of the FIA International Sporting Code (Chapter III, Article 1.4), the addition of any device to a helmet, aerodynamic or otherwise, is allowed if it was homologated with the helmet concerned. Helmets that meet the Snell-FIA CM/CMH standards may continue to be used by drivers after 15 years of age without limitation. The document 2023-ASN-C</p>
+                  <p>If hair extends appreciably from beneath helmet level to present a safety concern in the opinion of event race officials, it is mandatory that participants wear a balaclava or head-sock to prevent hair from extending outside the helmet. </p>
+                  <p>Apparel items such as bandanas, sweater hoods, loose belts, etc., even inside the racing suit, are not permitted. </p>
+                  <p>Drivers are required to wear racing suits designed for karting use for all events. Racing suits must cover the whole body, legs and arms included. The suit must be completely fastened as designed. A driver with exposed skin on arms or legs may be shown the Black Flag with Orange Disk. Abrasion resistant gloves must completely cover the hands and wrists. Abrasion resistant shoes must cover the feet and protect the ankles. </p>
+                  <h3>2.5 MECHANICS</h3>
+                  <p>Must have wristbands and sign waivers to be in the hot pit.</p>
+                  <h3>2.6 NOISE</h3>
+                  <p>Maximum kart engine sound level permitted is 82db as measured in accordance with VIKA specifications. </p>
+                  <p>All karts are to be equipped with an air box and an appropriate silencer. Note: Some engine packages may not require an additional silencer, but it is the driver&rsquo;s responsibility to ensure their engine does not exceed the 82 db level. (Measured 100&rsquo; perpendicular to the straightaway at a height of 3&rsquo;) as determined by the VIKA Executive or their designated authorities.</p>
+                  <p>All karts must use an air box with the exception of kid karts and 4 Cycle engines. CIK classes must use an approved air box.</p>
+                  <h3>2.7 PIT SPACES</h3>
+                  <p>All pits will require: Fire extinguisher, drain pan, garbage container.</p>
+                  <p>All asphalt surfaces are to be protected and kept free of debris at all times. It is also recommended that a tarp/carpet be placed under any area a kart will be worked on.</p>
+                  <p>To prevent asphalt and other surfaces from becoming contaminated with fuel/oil or other harmful products, DRIP PANS must be used at all times.</p>
+                  <p>Floor dry must be applied to all spills immediately and cleaned up before the racer leaves the site.</p>
+                  <p>Event Organisers shall provide absorptive products for spills.</p>
+                  <p>Damaged kart parts, tires, used fuel containers and any other discard-able material are to be removed from the facility on completion of practice.</p>
+                  <p>All fluids (fuel, oil, lubricants, cleaners, etc.) are to be removed from the facility on completion of practice or race.</p>
+                  <p>NO disposal of fuel/oil, or fuel containers on site.</p>
+                  <p>All safety wire, tie straps, etc. are to be picked up and put into the garbage at all times.</p>
+                  <p>Trailer tongues to be supported. i.e. set on a board so they don&rsquo;t dig into the pavement.</p>
+                  <p>Entrants/users of the facility are responsible for putting garbage in the garbage bin.</p>
+                  <p>Pit spaces must be left clean at the end of the event.</p>
+                  <p>Tent pegs are not allowed to be used to secure tents on paved surfaces.</p>
+                  <p>A first aid kit is highly recommended.</p>
+                  <p>Pit spaces may be assigned or organised by the VIKA executive for all practice and race dates.</p>
+                  <h1>3.0 SUPPLEMENTARY COMPETITION RULES</h1>
+                  <h3>3.1 COMPETITION CLASSES</h3>
+                  <p><a href="https://vika.ca/rules.html">https://vika.ca/rules.html</a>&nbsp;</p>
+                  <h3>3.2 KART ENTRY FEES</h3>
+                  <p>Refer to the most recent event registration information.</p>
+                  <h3>3.3 MEMBERSHIP FOR COMPETITION</h3>
+                  <p>Only VIKA Club members in good standing will receive Club Championship Points.</p>
+                  <h3>3.4 TRACK ACCESS</h3>
+                  <p>All drivers must have a valid wristband prior to accessing the hot pit area and race track. </p>
+                  <p>Kart displaying a current tech sticker on Nassau panel or band on the right front spindle, and</p>
+                  <p>Submitting a tech card to the Safety Tech inspector(s).</p>
+                  <p>If a driver is caught on the racing circuit at any time without Tech Approval or a valid wristband, they may be disqualified for the day.</p>
+                  <h3>3.5 REFUNDS<br />We do not issue refunds after race registration closes.</h3>
+                  <h3>3.6 WORKERS/STAFFING</h3>
+                  <p>A general, limited description of VIKA Club Roles is provided below.</p>
+                  <p>Race Director: The Race Director will be that official having complete charge of all race officials, technical inspectors, turn marshals, the track and karts during the event. The Race Director will disqualify or penalise, through signals from the flagman, any driver who in their opinion, or that of their observers, is in violation of the rules or whose kart is or has become unsafe. The decisions made by the race director to warn, penalise, or disqualify any driver is not eligible for protest. The Race Director may shorten any race before karts have left the grid. All events will have a race director appointed and will be introduced at the drivers meeting.</p>
+                  <p>Assistant Race Director: This official will work directly with the Race Director and serves as an additional set of eyes and ears. It is up to the Race Director to allow or not allow the Assistant Race Director to make on track decisions.</p>
+                  <p>Head Flagman: The Head Flagman is the official in complete charge of the flags at the start/finish line. The Head Flagman will adhere to the rules and regulation in this manual as well as following the instructions from the Race Director. The Head Flagman&rsquo;s signals are to be obeyed without exception. If necessary, the Head Flagman will conduct a meeting for all drivers prior to the start of the event to explain the flags, their use, and rules.</p>
+                  <p>Corner Marshalls: Corner Marshals will be strategically placed around the track to use flags, as instructed and when necessary, to signal drivers to hazardous situations. Corner Marshals will also report any rule infraction to the Race Director. It is not the duty of the Corner Marshall to assist drivers at the scene of the accident or incident in separating their karts or getting them underway. Their responsibility lies in warning oncoming traffic to a hazardous situation, and informing race control of the need for additional resources. Corner Marshals shall be at least 18 years of age.</p>
+                  <p>Grid Steward: The Grid Steward shall be that official(s) having the charge of the Grid area. It is the Grid Steward&rsquo;s responsibility to keep all unauthorised person(s) out of restricted areas, grid classes, and report any issues to the race director.</p>
+                  <p>Head Technical Inspector/Director: The Head Technical Inspector will be that official having charge of pre- and post-race inspections in a designated area where technical inspections are performed. They are solely responsible for appointing Assistant Technical Inspectors. The Head Technical Inspector will designate an area, the &ldquo;Impound Area&rdquo;, where karts and drivers will be checked for minimum class weight, fuel legality, maximum kart size, engine legality, exhaust system legality, body work specifications, legal attachment of weights, etc. Post-race scale and tech areas are off limits to person(s) other than the competitor. Competitors are under the direction of the Head Technical Inspector or their designee while in the inspection area. Entrants that leave the inspection area without the approval of the Head Technical Inspector or their designee, are subject to disqualification.</p>
+                  <p>Chief Scorer: The Chief Scorer is the official responsible for all timing and scoring of the event. The Chief Scorer will keep the Head flagman informed of positions, laps complete and or time of event.</p>
+                  <p>The Race Director may levy penalties for infractions committed by a driver, crew, or any spectator associated with a driver. Penalties will be based on ASN Penalty Guidelines. </p>
+                  <p>See Penalty information here: <a href="https://static1.squarespace.com/static/5ec3f6ee0e3c5849fde5aece/t/63f78b423d679d059b295c10/1677167426568/2023-ASN-CDN-Karting-Penalty-Guidelines.pdf">ASN Penalty Guidelines</a></p>
+                  <p>The Race Director can request VIKA levy additional penalties.</p>
+                  <h3>3.7 PIT SAFETY</h3>
+                  <p>The Safety Tech inspectors shall require the following safety and tech items at each pit area:</p>
+                  <p>At least 1 (one) copy (digital or printed) of these VIKA Supplemental Club Rules for the current year.</p>
+                  <h3>3.8 NEW / ROOKIE KART DRIVERS</h3>
+                  <p>All NEW/ROOKIE drivers must wear a contrasting colour X on the back of their helmet. Their kart must be equipped with a contrasting X on the rear number panel.</p>
+                  <p>All NEW/ROOKIE drivers will start in the Sportsman Class. This class will include TAG and 4 Cycle karts. Drivers will run in this class until they can maintain a minimum lap time as decided by the Race Director. Once a driver has been moved into their appropriate racing class, they will still be identified as a rookie and follow the following rules. Drivers will only be placed in the sportsman class at the discretion of the race director. No trophies or points will be awarded in this class, it is used for drivers to hone their race craft and get up to speed to race in their respective classes. </p>
+                  <p>All NEW/ROOKIE drivers will start at the back of their class in all sessions for a minimum of 3 race days and/or at the discretion of the race director.</p>
+                  <p>All NEW/ROOKIE drivers must attend an orientation session given by a VIKA member before practice on race weekends (this is also open to any driver wanting to attend).</p>
+                  <p>After 3 races the Rookie/New driver can request to have the rookie status removed at the discretion of the Race Director. </p>
+                  <p>3.9 KARTS OFF THE RACING SURFACE</p>
+                  <p>Flagging Marshals / Race Officials may assist all cadet drivers.<br />In Junior and Senior classes, once a kart has left the racing surface, and it can reasonably be assumed they are unable to re-enter the race track safely, the competitor must abandon their kart in the safest position possible, and move away from the racing surface. </p>
+                  <h3>3.10 POST RACE TECH</h3>
+                  <p>There shall be absolutely no excessive speed in the shut-down area. </p>
+                  <p>All karts must stop at or before the stop line/sign. </p>
+                  <p>Absolutely no driving onto the scales</p>
+                  <p>Driver and kart must weigh-in after qualifying and all subsequent races. </p>
+                  <p>If a driver is found to be under-weight they will be disqualified from the current session only. No person shall be permitted to assist or meet with any driver prior to weigh-in without permission of the Scale Technician. Failure to comply may result in a driver being disqualified from the session.</p>
+                  <p>All competitors must weigh-in except for medical reasons as a result of an on-track incident.</p>
+                  <p>The Scale Marshal shall have the authority to determine weight legality.</p>
+                  <p>All karts and drivers must proceed to tech and must be approved to receive points.</p>
+                  <p>Fuel, tires, chassis, engine, and engine components may be subject to post race legality technical inspections at the discretion of the Technical Director or Race Director.</p>
+                  <p>It is the driver&rsquo;s responsibility to ensure they clear Tech before leaving the scale area.</p>
+                  <h3>3.11 TIRES</h3>
+                  <p>All tires may be marked as per tech procedures at the discretion of the Technical Director.</p>
+                  <p>Any tires, which have not been approved for replacement by the Technical Director, or do not display the proper tech marking, shall be considered illegal.</p>
+                  <p>Tires checked with a durometer may not be more than 5 points lower than the factory known readings. Tires to be checked when the core temperature is 70&deg;F.</p>
+                  <p>No tire warming allowed.</p>
+                  <p>Any kart that has illegal compound tires for its class will be denied access to the grid prior to the start of the race.</p>
+                  <p>Tire treatment (ie: doping) is not allowed. Only VIKA approved tires may be used. Refer to <a href="https://vika.ca/rules.html">https://vika.ca/rules.html</a>&nbsp;for approved tires.</p>
+                  <p>Current approved tires as follows:</p>
+                  <p>** Full Size chassis classes : MoJo ( D2,D5 ), LeCont ( FZ LP White Prime, FZ LO Red Option, SVB Red Option ), LeVanto ( KRT ), Vega Blue Nordam ( ONT / SL3 ) </p>
+                  <p>* Kid Kart / Cadet Chassis classes : Rotax Micro, Mini and Tag Cadet use only Mojo ( D2 ), LeCont ( FZ LO Red Option, SVB Red Option), LeVanto ( KRT )</p>
+                  <p>NOTE : Rain Tires are open for all classes. Any of the above compounds may be used in any classes unless specified. </p>
+                  <h3>3.12 ENGINE</h3>
+                  <p>All engines must conform to current class rules listed at <a href="https://vika.ca/rules.html">https://vika.ca/rules.html</a>&nbsp;</p>
+                  <p>The Race Director and Technical Director reserve the right to impound any engine and seal it for technical inspection at a later time. Refusal to comply with the technical inspection request shall result in disqualification from the current event and possible additional membership penalties.</p>
+                  <h3>3.13 BALLAST</h3>
+                  <p>Ballast weight must be securely attached to the main Kart frame or seat. Mounting of ballast weight on bumpers or side bumper bars is not permitted. Bolts must be used to secure the ballast weights. Attaching bolts must be no less than 5/16&rdquo; (8 mm) in diameter. A minimum of one attaching bolt is required for each 5 pounds of weight added. Attaching bolts must be securely fastened with one of the following methods: Single nut with cotter pin or safety wire Double nuts or Self-locking nuts &ndash; metallic or plastic type Large area washers must be used in the attaching of weights to the seat of the Kart, both inside the seat and outside of the ballast. </p>
+                  <p>All ballast must be painted white and have the competitor kart number on it. </p>
+                  <p>Ballast may be limited to a maximum allowed for Cadet, Micro, and Junior competitors. Maximum ballast will be determined by VIKA. </p>
+                  <h3>3.14 REAR BUMPER</h3>
+                  <p>Wide rear bumpers are mandatory in all Junior and Senior classes as per ASN. All dimensions are covered in the ASN Technical Regulations. </p>
+                  <p>In addition, VIKA requires a 5-inch minimum height on the outside edges and must be a plastic bumper; metal bumpers are no longer allowed.</p>
+                  <p>All full size chassis must use a homologated rear bumper. 1040mm minimum width as per ASN.</p>
+                  <h3>3.15 FRONT BUMPER</h3>
+                  <p>CIK approved Drop Down bumper system is REQUIRED.</p>
+                  <p>Technical Drawings area available at this link: <a href="https://static1.squarespace.com/static/5ec3f6ee0e3c5849fde5aece/t/63f78ac3a9af7036eacb7cf8/1677167300540/2023-ASN-CDN-Front-Fairing-Push-Back.pdf">Push Back Bumper Rules</a></p>
+                  <h3>3.16 KART NUMBERS</h3>
+                  <p>Kart numbers assigned at the beginning of the race season cannot be changed until the following season. Karters assigned racing numbers from the previous season will have a first right of use as long as they are a paid up member in good standing.</p>
+                  <p>Kart numbers should follow ASN technical regulations. Any deviation from the ASN regulations must be approved by the Race Director or Technical Inspector prior to accessing the race track. </p>
+                  <h3>3.17 FLAGS:</h3>
+                  <p>Unless otherwise notified by VIKA Officials, flags will be as follows:</p>
+                  <p>Green Flag or Green Light: Displayed at the start of competition or practice and kept visible as long as the track is clear for racing.</p>
+                  <p>Red Flag: Raise your arm in the air to warn following karts and stop in a controlled manner so that you do not endanger other karts. Do not work on your kart. Wait for instruction from the Race Officials.</p>
+                  <p>Yellow Flag: Be prepared to stop. The track could be blocked by an accident, emergency vehicle or debris. Raise your arm in the air to warn the following karts if possible, slow down and hold your position. DO NOT PASS ON A YELLOW FLAG. If the Host Flagman displays a</p>
+                  <p>Yellow Flag, hold your position and use caution all the way around the track. Do not begin racing again until the Host Flagman displays a Green Flag to resume racing.</p>
+                  <p>Yellow and Red Flags Waved Together: There is a Restart of the race. Drivers will reform in a pack, at a slow pace for the Restart.</p>
+                  <p>Blue Flag with Yellow Stripe (Blue Flag): Faster kart is overtaking you and may lap you. To prevent a hazardous condition on the track, make room for the overtaking kart. The Blue Flag can be displayed at any corner at the direction of the Head Flagman as long as there is direct communication between the Flagman and Corner workers.</p>
+                  <p>White Flag: This flag is a courtesy flag that indicates that there may be one (1) lap of racing left. Do not assume that the next flag waved will be a Checkered&nbsp;Flag; you should always race to the First Checkered&nbsp;Flag.</p>
+                  <p>Checkered&nbsp;Flag: Racing is finished and the Heat is completed. Discontinue racing and return to the Pits. Enter the Pit Area slowly and stop before you get to the scales. You must have your kart and yourself weighed.</p>
+                  <p>Checkered&nbsp;and Black Flag Waved Together: Racing is finished and the Heat is completed under Protest. Discontinue racing and return to the Pits. Enter the Pit Area slowly and stop before you get to the scales. You must have your kart and yourself weighed.</p>
+                  <p>Black Flag by the Flagman: A rolled Black Flag, given horizontal to the racing surface to any Driver will be a warning of intense driving and to keep it clean. If the Black Flag is waved unfurled at you, it may be accompanied by a chalkboard with the number of the kart or karts to be disqualified. Return to the Pits and check with the Race Director regarding the reason.</p>
+                  <p>Black Flag with an Orange Ball: Slow down; stay on the outside of the track and return to the Pits at the proper entrance. You have a dangerous or mechanical problem. Do Not Continue Racing until the problem is corrected.</p>
+                  <p>Yellow Flag with Black Border: (Transponder Flag): IF shown you are not being scored. Proceed into Hot Pit install Transponder and return to race if applicable. Driver will be scored in last position if raced without or faulty transponder.</p>
+                  <p>During the Race:</p>
+                  <p>Black Flags: Black flags will be displayed when the Race Director decides that a kart must exit the track. A waved black flag will be shown to the driver and their kart number will be displayed on a pit board. If the Black Flag and the pit board needs to be displayed at a location other than the flag stand, it will be reviewed at the drivers meeting. A driver may be ordered off the track if the Race Director or Head Flagman feels the driver has violated rules, is driving in a reckless, inappropriate or unsportsmanlike manner. The decision to order or not to order a driver to the pits is not eligible for protest.</p>
+                  <p>A Rolled Black Flag will be used to warn a driver for minor violations.</p>
+                  <p>The Black Flag with Orange Ball (Mechanical Black Flag) will be used when the Race Director or Head Flagman feels there is a safety issue with a kart on the track. When a driver is ordered off the track under this flag they will be scored in their appropriate position.</p>
+                  <p>Drivers that receive the Black Flag will no longer be scored, and will receive no points for the Pre-Final or Final or earned grid position in Qualifying or the Pre-Final. At the Race Director&rsquo;s discretion, a driver and their crew may be disqualified from further participation in the event for flagrant infractions from the driver or crew.</p>
+                  <p>Failure to obey a black flag is a flagrant violation and will be subject to expulsion from the event and further disciplinary action up to and including suspension.</p>
+                  <p>Blue Flags: When a Blue Flag is shown to a when they are at risk of being lapped by faster traffic. When a driver is being lapped, they will give the right of way to the overtaking driver(s) and should indicate what the safest way to pass by pointing is.</p>
+                  <p>Yellow Flags: When a Corner Marshal displays a yellow flag, it signifies caution at their section of the track. Use caution, be prepared to stop until the driver is past this section. No passing is allowed.</p>
+                  <p>When the Head Flagman displays the yellow flag, it signifies a full course caution. Slow down, be prepared to stop, and do not resume racing until the Head Flagman displays the Green Flag.</p>
+                  <p>Red Flags:</p>
+                  <p>At the option of the Race Director or Head Flagman a Red Flag may be displayed when an unsafe condition exists on the track. A Red Flag is mandatory when a kart overturns, a driver is ejected from a kart or there is an injured driver requiring medical attention.</p>
+                  <p>When the Red Flag is displayed all drivers will come to a stop in a safe and controlled manner, with their arm raised to warn other drivers. If a Red Flag is displayed prior to all karts being scored on the first lap, a restart is required using the original starting order. Once all karts running have completed a lap and have been scored, the last completed lap order will be used. Lineups will be determined by the official scorer.</p>
+                  <p>During Red Flag conditions: No work will be permitted on the karts.</p>
+                  <p>Option 1: All karts will be stopped and held on the track. When the unsafe condition has been cleared, karts will be permitted to restart, will be realigned and started. Karts will have the same 90-second rule as if they were on the grid.</p>
+                  <p>Option 2: All karts will be removed from the track and quarantined in a secure area, until such time the Race Director chooses to restart the group. At this time karts will be permitted to restart, will be realigned and started. Karts will have the same 90-second rule as if they were on the grid.</p>
+                  <p>All karts involved in an incident that requires a Red Flag, will require a safety check by the Head Technical Inspector, or their designee before being allowed to return to the track.</p>
+                  <p>Karts will not be allowed to restart following a Red Flag:Any kart that has been determined by the Race Director to be the cause of a Red Flag. This Decision by the Race Director is not eligible for protest.</p>
+                  <p>The Race Director or Head Flagman, prior to the restart may Black Flag a driver that will be subject to a Black Flag under race conditions.</p>
+                  <p>If a kart that has dropped out of the race prior to the Red Flag, will not be eligible to restart. All restarts following a Red Flag will be single file.</p>
+                  <p>White Flag: The White Flag may display signifying the start of the last lap. This is displayed as a courtesy and may not always be shown. Display of the White Flag does not automatically signify the next lap at the end of the race.</p>
+                  <p>Checkered&nbsp;Flag: The Checkered&nbsp;Flag signifies the end of the race, regardless of the number of laps or elapsed time. When you receive the checkered&nbsp;flag, your race is over.</p>
+                  <p>Checkered&nbsp;Flag with Black Flag: Finish is under protest. This is used when there is suspicion of, or reports of, or rough driving, or unsportsmanlike conduct are present. This means that the race was finished under protest by the Race Director or Head Flagman. After consulting with race officials, the Race Director will announce their finding/ruling to the competitor(s) involved and may adjust the finishing position accordingly.</p>
+
+                  <div class="gallery row g-3 g-md-4" data-video="true">
+                     <div class="col-12">
+                       <div class="row">
+                         <div class="col-6">
+                           <!-- Item -->
+                           <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/flags1.png">
+                             <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0">
+                               <i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                               <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                             </div>
+                             <div class="zoom-effect-wrapper rounded-4">
+                               <img class="zoom-effect-img" src="assets/img/VIKA/flags1.png" alt="Racing flags">
+                             </div>
+                           </a>
+         
+                         </div>
+                         <div class="col-6">
+                           <!-- Item -->
+                           <a class="gallery-item d-block card-hover zoom-effect" href="assets/img/VIKA/flags2.png">
+                             <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-4 overflow-hidden z-2 opacity-0"><i class="ai-zoom-in fs-2 text-white position-relative z-2"></i>
+                               <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-40"></div>
+                             </div>
+                             <div class="zoom-effect-wrapper rounded-4"><img class="zoom-effect-img" src="assets/img/VIKA/flags2.png" alt="Racing flags continued"></div>
+                           </a>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+
+                  <br/>
+                  <h3>Senior 4 Stroke Open Class Rules</h3>
+                  <p>All Drivers to be VIKA members and must adhere to the current VIKA Competition Rules with the following supplementary rules:</p>
+                  <p>&bull; A single motor to be 4-Cycle and each kart not to exceed a cubic capacity (cc) of 210 cc. All modifications are allowed but must run gasoline only. Engines must not be run on</p>
+                  <p>Alcohol. Shifter karts are NOT permitted</p>
+                  <p>&bull; There is no tire rule in this class, all tires are allowed. </p>
+                  <p>&bull; This class will provide its own Trophy sponsor</p>
+                  <p><a target="_blank" href="https://vika.ca/assets/documents/2023-VIKA-Kid-Kart-Class-Supplemental-Rules-1.pdf">KID KART CLASS SUPPLEMENTAL RULES</a></p>
+               </div>
+            </div>
+         </section>
+      </main>
+      <!-- Footer -->
+      <footer class="footer bg-dark py-5" data-bs-theme="dark">
+         <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
+            <div class="border-bottom text-center pb-4" style="overflow: hidden;">
+               <a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="index.html">
+               <span class="text-light opacity-90">Vancouver Island Karting Association</span>
+               </a>
+               <ul class="nav justify-content-center py-1 pb-sm-2">
+                  <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="rules.html">Rules</a></li>
+                  <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="membership.html">Membership</a></li>
+                  <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="index.html#contact">Contact</a></li>
+               </ul>
+            </div>
+            <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
+               <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0">
+                  <a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-3" target="_blank" href="https://www.facebook.com/groups/2809072876088221" aria-label="Facebook">
+                  <i class="ai-facebook"></i>
+                  </a>
+               </div>
+               <p class="nav fs-sm order-sm-1 text-center mb-0">
+                  <span class="text-body-secondary">&copy; All rights reserved Vancouver Island Karting Association.</span>
+               </p>
+               <p class="nav fs-sm order-sm-1 text-center mb-0">
+                  <span class="text-body-secondary">Website by</span>
+                  <a class="nav-link d-inline fw-normal p-0 ms-1" href="https://mnursey.github.io/" target="_blank" rel="noopener">Mitchell Nursey</a>
+               </p>
+            </div>
+         </div>
       </footer>
-
-
-    <!-- Back to top button -->
-    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
-      </svg>
-      <i class="ai-arrow-up"></i>
-    </a>
-
-
-    <!-- Vendor scripts: JS libraries and plugins -->
-    <script src="assets/vendor/aos/dist/aos.js"></script>
-
-    <!-- Bootstrap + Theme scripts -->
-    <script src="assets/js/theme.min.js"></script>
-  </body>
+      <!-- Back to top button -->
+      <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+         <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+         </svg>
+         <i class="ai-arrow-up"></i>
+      </a>
+      <!-- Vendor scripts: JS libraries and plugins -->
+      <script src="assets/vendor/aos/dist/aos.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/simplebar/dist/simplebar.min.js"></script>
+      <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+      <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+      <script src="assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+      <script src="assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+      
+      <!-- Bootstrap + Theme scripts -->
+      <script src="assets/js/theme.min.js"></script>
+   </body>
 </html>
